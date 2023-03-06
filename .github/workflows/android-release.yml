@@ -1,49 +1,47 @@
 name: Android Release
- 
-# Controls when the workflow will run
-on: 
 
-# Triggers the workflow on push or pull request events for the "release" branch;
-# you can change it according to your requirement
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events for the "release" branch;
+  # you can change it according to your requirement
 
   pull_request:
-    types: [ closed ]
-    branches: [ "main" ]
- 
-# Allows you to run this workflow manually from the Actions tab from your GitHub repo
-# (a workflow run is made up of one or more jobs that can run sequentially or in parallel)
+    types: [closed]
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab from your GitHub repo
+  # (a workflow run is made up of one or more jobs that can run sequentially or in parallel)
 
   workflow_dispatch:
 
 # currently Contains one job that do all process from build to deploy
-jobs: 
-  build: 
+jobs:
+  build:
     # to only merge if there is a merge action
     if: github.event.pull_request.merged == true
     # Contains the type of runner that the job will run on
     runs-on: ubuntu-latest
- 
 
     # Uses steps to represent a sequence of tasks that will be executed as part of job
-    steps: 
+    steps:
       # Readies your repository under $GITHUB_WORKSPACE, so your job can access it
-      
+
       - uses: actions/checkout@v3
 
       # Sets up Java so your job can use it for the Flutter app build
       - uses: actions/setup-java@v3
         with:
-          distribution: 'zulu'
+          distribution: "zulu"
           java-version: "12.x"
           # providing Gradle to be cached with respect to the Java SDK
-          cache: 'gradle' 
-      
+          cache: "gradle"
+
       # Sets up Flutter using the subosito Flutter workflow
       - uses: subosito/flutter-action@v2
         with:
-        # Adjusts to the Flutter version you are working with
-          flutter-version: "3.3.10"
-          channel: 'stable'
+          # Adjusts to the Flutter version you are working with
+          flutter-version: "3.7.3"
+          channel: "stable"
           # enabling caching for the Flutter SDK
           cache: true
 
@@ -63,7 +61,7 @@ jobs:
       # analyzing the app to know that there is an build issue or not
       - name: Run analyzer
         run: flutter analyze
-        
+
       # Read the updated version from version1.txt file
       - name: Read release version
         id: read-version
@@ -101,7 +99,7 @@ jobs:
         with:
           name: apk-release
           path: build/app/outputs/flutter-apk/app-release.apk
-          
+
       # Uploaded the AAP release as an artifact to be used in the next job
       - name: Upload AAP Release
         uses: actions/upload-artifact@v2
