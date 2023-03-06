@@ -51,9 +51,9 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
     return Stack(
       children: [
         Container(
-          margin: EdgeInsets.all(20.0),
-          padding: EdgeInsets.all(20.0),
-          decoration: BoxDecoration(
+          margin: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20.0),
+          decoration: const BoxDecoration(
             color: Colors.white,
             boxShadow: [
               BoxShadow(
@@ -72,8 +72,8 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
                       backgroundImage: NetworkImage(
                           watchAllVideos.channel?.profilePictureUrl ?? ""),
                     )
-                  : CircularProgressIndicator(),
-              SizedBox(width: 12.0),
+                  : const CircularProgressIndicator(),
+              const SizedBox(width: 12.0),
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -81,7 +81,7 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
                   children: <Widget>[
                     Text(
                       watchAllVideos.channel?.title ?? "",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 20.0,
                         fontWeight: FontWeight.w600,
@@ -90,7 +90,7 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
                     ),
                     Text(
                       watchAllVideos.channel?.description ?? "",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.grey,
                         fontSize: 12.0,
                         fontWeight: FontWeight.w600,
@@ -117,11 +117,11 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
           left: 15,
           child: IconButton(
             onPressed: () {
-              BuildContext _context = NavigationService.context;
+              BuildContext context = NavigationService.context;
 
-              return _context.pushNamed(RouteStrings.about);
+              return context.pushNamed(RouteStrings.about);
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.info_outline,
               size: 30,
               color: Colors.orange,
@@ -161,7 +161,7 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
                   ),
                   controller: controller,
                   isScrollable: true,
-                  labelPadding: EdgeInsets.symmetric(horizontal: 30),
+                  labelPadding: const EdgeInsets.symmetric(horizontal: 30),
                   tabs: [
                     Tab(
                       child: Text(
@@ -182,7 +182,7 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
             Expanded(
               child: TabBarView(
                 controller: controller,
-                children: [
+                children: const [
                   AllVideosView(),
                   PlaylistsView(),
                 ],

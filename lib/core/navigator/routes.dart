@@ -53,7 +53,7 @@ class Routes {
         name: RouteStrings.about,
         path: RouteStrings.about,
         builder: (BuildContext context, GoRouterState state) {
-          return AboutView();
+          return const AboutView();
         },
       ),
     ],

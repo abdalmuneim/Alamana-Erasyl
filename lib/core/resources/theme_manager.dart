@@ -8,8 +8,8 @@ ThemeData get applicationTheme => ThemeData(
 
       /// Main Color
 
-      primaryColor: Color(0xFF26A247),
-      primaryColorLight: Color(0xFF49A226),
+      primaryColor: const Color(0xFF26A247),
+      primaryColorLight: const Color(0xFF49A226),
       primaryColorDark: Colors.black,
       disabledColor: Colors.grey,
 

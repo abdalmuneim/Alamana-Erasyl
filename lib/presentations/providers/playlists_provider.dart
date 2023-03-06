@@ -13,7 +13,7 @@ class PlaylistsProvider extends ChangeNotifier {
 
     final List<ItemPlaylist> playlist =
         await APIService.instance.fetchPlaylistsFromChannel();
-    this._playlist = playlist;
+    _playlist = playlist;
     _isLoading = false;
     notifyListeners();
   }
