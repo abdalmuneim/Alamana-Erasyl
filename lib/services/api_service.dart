@@ -107,11 +107,11 @@ class APIService {
 
       // Fetch first eight videos from uploads playlist
       List<Video> videos = [];
-      videosJson.forEach(
-        (json) => videos.add(
+      for (var json in videosJson) {
+        videos.add(
           Video.fromMap(json['snippet']),
-        ),
-      );
+        );
+      }
       return videos;
     } else {
       throw json.decode(response.body)['error']['message'];
@@ -148,11 +148,11 @@ class APIService {
 
       // Fetch first eight videos from uploads playlist
       List<Video> videos = [];
-      videosJson.forEach(
-        (json) => videos.add(
+      for (var json in videosJson) {
+        videos.add(
           Video.fromMap(json['snippet']),
-        ),
-      );
+        );
+      }
       return videos;
     } else {
       throw json.decode(response.body)['error']['message'];

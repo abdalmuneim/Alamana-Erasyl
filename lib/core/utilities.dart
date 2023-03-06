@@ -177,7 +177,7 @@ class Utils {
 
 // method for hide loading
   static void hideLoading(
-    _context,
+    context,
   ) {
     removeEnhancedDialog(dialogName: 'loading');
   }

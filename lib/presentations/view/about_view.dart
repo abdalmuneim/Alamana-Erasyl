@@ -16,19 +16,19 @@ class AboutView extends StatelessWidget {
           title: const Text(''),
         ),
         body: ListView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           children: [
             Image.asset(
               Assets.logo,
               width: 250,
               height: 250,
             ),
-            50.SH,
+            50.sh,
             BuildCardInfo(
                 image: Assets.sanad,
                 name: AppString.sanad,
                 info: AppString.infSanad),
-            50.SH,
+            50.sh,
             BuildCardInfo(
                 image: Assets.mahmoud,
                 name: AppString.mahmoud,

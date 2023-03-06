@@ -10,7 +10,7 @@ import 'package:sanad_abu_yousef/core/utilities.dart';
 import 'package:sanad_abu_yousef/services/network_info.dart';
 
 class SplashProvider extends ChangeNotifier {
-  NetworkInfoImpl _networkInfoImpl = NetworkInfoImpl.instance;
+  final NetworkInfoImpl _networkInfoImpl = NetworkInfoImpl.instance;
 
   Future<void> startTimer() async {
     _networkInfoImpl.initializeNetworkStream();

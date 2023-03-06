@@ -46,9 +46,9 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
 
   _buildHeadPlaylist() {
     return Container(
-      margin: EdgeInsets.all(20.0),
-      padding: EdgeInsets.all(20.0),
-      decoration: BoxDecoration(
+      margin: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(20.0),
+      decoration: const BoxDecoration(
         color: Colors.white,
         boxShadow: [
           BoxShadow(
@@ -69,7 +69,7 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
                 width: 60,
                 height: SizeConfig.screenHeight * .09,
                 // margin: EdgeInsets.only(right: 10, top: 10),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.black45,
                 ),
                 child: Column(
@@ -84,7 +84,7 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
                           .copyWith(fontSize: 18),
                       textAlign: TextAlign.center,
                     ),
-                    Icon(
+                    const Icon(
                       Icons.playlist_play_rounded,
                       color: Colors.white,
                       size: 30,
@@ -94,7 +94,7 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
               ),
             ],
           ),
-          12.0.SW,
+          12.0.sw,
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -102,7 +102,7 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
               children: <Widget>[
                 Text(
                   widget.title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 20.0,
                     fontWeight: FontWeight.w600,
@@ -111,7 +111,7 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
                 ),
                 Text(
                   widget.description,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.grey,
                     fontSize: 12.0,
                     fontWeight: FontWeight.w600,
@@ -144,10 +144,10 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
         ),
       ),
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-        padding: EdgeInsets.all(10.0),
+        margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
+        padding: const EdgeInsets.all(10.0),
         height: 140.0,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           boxShadow: [
             BoxShadow(
@@ -159,16 +159,16 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
         ),
         child: Row(
           children: <Widget>[
-            Text('${index}. '),
+            Text('$index. '),
             Image(
               width: 150.0,
               image: NetworkImage(video.thumbnailUrl ?? ""),
             ),
-            SizedBox(width: 10.0),
+            const SizedBox(width: 10.0),
             Expanded(
               child: Text(
                 video.title ?? "",
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: 18.0,
                 ),
@@ -206,12 +206,12 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
                     children: [
                       watch.videos!.isNotEmpty
                           ? _buildVideo(video, index)
-                          : LoadingWidget(),
+                          : const LoadingWidget(),
                       index == watch.videos?.length
                           ? index != int.parse(widget.itemCount)
-                              ? CircularProgressIndicator()
-                              : 0.SH
-                          : 0.SH
+                              ? const CircularProgressIndicator()
+                              : 0.sh
+                          : 0.sh
                     ],
                   );
                 },

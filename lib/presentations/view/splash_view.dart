@@ -34,7 +34,7 @@ class _SplashViewState extends State<SplashView> {
               width: 250,
               height: 250,
             ),
-            20.SH,
+            20.sh,
             Text(
               Constant.appName,
               style: Theme.of(context).textTheme.headlineMedium,

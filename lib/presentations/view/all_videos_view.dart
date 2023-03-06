@@ -6,8 +6,10 @@ import 'package:sanad_abu_yousef/presentations/providers/all_videos_provider.dar
 import 'package:sanad_abu_yousef/presentations/view/video_view.dart';
 
 class AllVideosView extends StatefulWidget {
+  const AllVideosView({super.key});
+
   @override
-  _AllVideosViewState createState() => _AllVideosViewState();
+  State<AllVideosView> createState() => _AllVideosViewState();
 }
 
 class _AllVideosViewState extends State<AllVideosView> {
@@ -23,10 +25,10 @@ class _AllVideosViewState extends State<AllVideosView> {
         ),
       ),
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-        padding: EdgeInsets.all(10.0),
+        margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
+        padding: const EdgeInsets.all(10.0),
         height: 140.0,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           boxShadow: [
             BoxShadow(
@@ -42,11 +44,11 @@ class _AllVideosViewState extends State<AllVideosView> {
               width: 150.0,
               image: NetworkImage(video.thumbnailUrl ?? ""),
             ),
-            SizedBox(width: 10.0),
+            const SizedBox(width: 10.0),
             Expanded(
               child: Text(
                 video.title ?? "",
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: 18.0,
                 ),
@@ -83,7 +85,7 @@ class _AllVideosViewState extends State<AllVideosView> {
                     },
                   ),
                 )
-              : LoadingWidget()),
+              : const LoadingWidget()),
     );
   }
 }

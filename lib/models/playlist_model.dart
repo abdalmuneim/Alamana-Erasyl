@@ -59,28 +59,24 @@ class PlaylistModel {
 
 class ItemPlaylist {
   ItemPlaylist({
-    this.kind,
     this.etag,
     this.id,
     this.snippet,
     this.contentDetails,
   });
 
-  final Kind? kind;
   final String? etag;
   final String? id;
   final Snippet? snippet;
   final ContentDetails? contentDetails;
 
   ItemPlaylist copyWith({
-    Kind? kind,
     String? etag,
     String? id,
     Snippet? snippet,
     ContentDetails? contentDetails,
   }) =>
       ItemPlaylist(
-        kind: kind ?? this.kind,
         etag: etag ?? this.etag,
         id: id ?? this.id,
         snippet: snippet ?? this.snippet,
@@ -88,7 +84,6 @@ class ItemPlaylist {
       );
 
   factory ItemPlaylist.fromMap(Map<String, dynamic> json) => ItemPlaylist(
-        kind: kindValues.map[json["kind"]]!,
         etag: json["etag"],
         id: json["id"],
         snippet:
@@ -99,7 +94,6 @@ class ItemPlaylist {
       );
 
   Map<String, dynamic> toMap() => {
-        "kind": kindValues.reverse[kind],
         "etag": etag,
         "id": id,
         "snippet": snippet?.toMap(),
@@ -130,45 +124,35 @@ class ContentDetails {
       };
 }
 
-enum Kind { YOUTUBE_PLAYLIST }
-
-final kindValues = EnumValues({"youtube#playlist": Kind.YOUTUBE_PLAYLIST});
-
 class Snippet {
   Snippet({
     this.publishedAt,
-    this.channelId,
     this.title,
     this.description,
     this.thumbnails,
-    this.channelTitle,
     this.localized,
   });
 
   final DateTime? publishedAt;
-  final ChannelId? channelId;
+
   final String? title;
   final String? description;
   final Thumbnails? thumbnails;
-  final ChannelTitle? channelTitle;
+
   final Localized? localized;
 
   Snippet copyWith({
     DateTime? publishedAt,
-    ChannelId? channelId,
     String? title,
     String? description,
     Thumbnails? thumbnails,
-    ChannelTitle? channelTitle,
     Localized? localized,
   }) =>
       Snippet(
         publishedAt: publishedAt ?? this.publishedAt,
-        channelId: channelId ?? this.channelId,
         title: title ?? this.title,
         description: description ?? this.description,
         thumbnails: thumbnails ?? this.thumbnails,
-        channelTitle: channelTitle ?? this.channelTitle,
         localized: localized ?? this.localized,
       );
 
@@ -176,13 +160,11 @@ class Snippet {
         publishedAt: json["publishedAt"] == null
             ? null
             : DateTime.parse(json["publishedAt"]),
-        channelId: channelIdValues.map[json["channelId"]]!,
         title: json["title"],
         description: json["description"],
         thumbnails: json["thumbnails"] == null
             ? null
             : Thumbnails.fromMap(json["thumbnails"]),
-        channelTitle: channelTitleValues.map[json["channelTitle"]]!,
         localized: json["localized"] == null
             ? null
             : Localized.fromMap(json["localized"]),
@@ -190,23 +172,12 @@ class Snippet {
 
   Map<String, dynamic> toMap() => {
         "publishedAt": publishedAt?.toIso8601String(),
-        "channelId": channelIdValues.reverse[channelId],
         "title": title,
         "description": description,
         "thumbnails": thumbnails?.toMap(),
-        "channelTitle": channelTitleValues.reverse[channelTitle],
         "localized": localized?.toMap(),
       };
 }
-
-enum ChannelId { UCJ6_P_XA3_U_UA_G9_O4_FN_RM9_U0_JG }
-
-final channelIdValues = EnumValues(
-    {"UCJ6pXA3uUaG9o4fnRm9u0Jg": ChannelId.UCJ6_P_XA3_U_UA_G9_O4_FN_RM9_U0_JG});
-
-enum ChannelTitle { EMPTY }
-
-final channelTitleValues = EnumValues({"علمنا الرسول": ChannelTitle.EMPTY});
 
 class Localized {
   Localized({

@@ -3,12 +3,10 @@ import 'package:sanad_abu_yousef/models/video_model.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class VideoView extends StatefulWidget {
+  const VideoView({super.key, required this.video});
   final Video video;
-
-  VideoView({required this.video});
-
   @override
-  _VideoViewState createState() => _VideoViewState();
+  State<VideoView> createState() => _VideoViewState();
 }
 
 class _VideoViewState extends State<VideoView> {
@@ -19,7 +17,7 @@ class _VideoViewState extends State<VideoView> {
     super.initState();
     _controller = YoutubePlayerController(
       initialVideoId: widget.video.id ?? "",
-      flags: YoutubePlayerFlags(
+      flags: const YoutubePlayerFlags(
         mute: false,
         autoPlay: true,
       ),
@@ -42,11 +40,11 @@ class _VideoViewState extends State<VideoView> {
                   showVideoProgressIndicator: true,
                   onReady: () {},
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text(widget.video.title ?? ""),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text(widget.video.description ?? ""),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
               ],
             ),
           ),

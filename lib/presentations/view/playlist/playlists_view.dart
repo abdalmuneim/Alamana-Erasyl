@@ -23,9 +23,9 @@ class _PlaylistsViewState extends State<PlaylistsView> {
   _buildPlayList(ItemPlaylist items) {
     return GestureDetector(
       onTap: () {
-        BuildContext _context = NavigationService.context;
-        print(items.id);
-        return _context.pushNamed(
+        BuildContext context = NavigationService.context;
+
+        return context.pushNamed(
           RouteStrings.videosPlaylist,
           queryParams: <String, String>{
             Fields.id: items.id ?? "",
@@ -37,10 +37,10 @@ class _PlaylistsViewState extends State<PlaylistsView> {
         );
       },
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-        padding: EdgeInsets.all(10.0),
+        margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
+        padding: const EdgeInsets.all(10.0),
         height: 140.0,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           boxShadow: [
             BoxShadow(
@@ -62,8 +62,8 @@ class _PlaylistsViewState extends State<PlaylistsView> {
                 Container(
                   width: 60,
                   height: SizeConfig.screenHeight * .09,
-                  margin: EdgeInsets.only(right: 10, top: 10),
-                  decoration: BoxDecoration(
+                  margin: const EdgeInsets.only(right: 10, top: 10),
+                  decoration: const BoxDecoration(
                     color: Colors.black45,
                   ),
                   child: Column(
@@ -75,7 +75,7 @@ class _PlaylistsViewState extends State<PlaylistsView> {
                         style: Theme.of(context).textTheme.bodySmall,
                         textAlign: TextAlign.center,
                       ),
-                      Icon(
+                      const Icon(
                         Icons.playlist_play_rounded,
                         color: Colors.white,
                       ),
@@ -84,7 +84,7 @@ class _PlaylistsViewState extends State<PlaylistsView> {
                 ),
               ],
             ),
-            SizedBox(width: 10.0),
+            const SizedBox(width: 10.0),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -92,14 +92,14 @@ class _PlaylistsViewState extends State<PlaylistsView> {
                 children: [
                   Text(
                     items.snippet?.title ?? "",
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.black,
                       fontSize: 18.0,
                     ),
                   ),
                   Text(
                     items.snippet?.description ?? "",
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 12.0,
                     ),
@@ -127,8 +127,8 @@ class _PlaylistsViewState extends State<PlaylistsView> {
                       return _buildPlayList(item);
                     },
                   )
-                : Text('لا يوجد بيانات')
-            : LoadingWidget(),
+                : const Text('لا يوجد بيانات')
+            : const LoadingWidget(),
       ),
     );
   }

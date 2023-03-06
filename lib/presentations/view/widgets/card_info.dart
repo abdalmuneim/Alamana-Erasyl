@@ -15,10 +15,10 @@ class BuildCardInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-      padding: EdgeInsets.all(10.0),
+      margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
+      padding: const EdgeInsets.all(10.0),
       height: 140.0,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         boxShadow: [
           BoxShadow(
@@ -35,7 +35,7 @@ class BuildCardInfo extends StatelessWidget {
               backgroundColor: Colors.white,
               radius: 35,
               backgroundImage: AssetImage(image)),
-          10.SW,
+          10.sw,
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
