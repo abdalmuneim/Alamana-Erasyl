@@ -13,8 +13,6 @@ class APIService {
   APIService();
 
   static final APIService instance = APIService._instantiate();
-
-  final String _baseUrl = 'www.googleapis.com';
   String _nextPageToken = '';
 
   /// Fetch channel
@@ -25,7 +23,7 @@ class APIService {
       'key': APIKeys.youtubeAPI,
     };
     Uri uri = Uri.https(
-      _baseUrl,
+      Constant.basicApi,
       '/youtube/v3/channels',
       parameters,
     );
@@ -59,7 +57,7 @@ class APIService {
       'key': APIKeys.youtubeAPI,
     };
     Uri uri = Uri.https(
-      _baseUrl,
+      Constant.basicApi,
       '/youtube/v3/playlists',
       parameters,
     );
@@ -90,7 +88,7 @@ class APIService {
       'key': APIKeys.youtubeAPI,
     };
     Uri uri = Uri.https(
-      _baseUrl,
+      Constant.basicApi,
       '/youtube/v3/playlistItems',
       parameters,
     );
@@ -131,7 +129,7 @@ class APIService {
       'key': APIKeys.youtubeAPI,
     };
     Uri uri = Uri.https(
-      _baseUrl,
+      Constant.basicApi,
       '/youtube/v3/playlistItems',
       parameters,
     );
