@@ -1,0 +1,55 @@
+{
+    "kind": "youtube#channelListResponse",
+    "etag": "f3m9TuRb1Q74HVKy1E4khLIHkdo",
+    "pageInfo": {
+        "totalResults": 1,
+        "resultsPerPage": 5
+    },
+    "items": [
+        {
+            "kind": "youtube#channel",
+            "etag": "PWtZ0kMsKmYOhu-nni3DtKft_qk",
+            "id": "UCJ6pXA3uUaG9o4fnRm9u0Jg",
+            "snippet": {
+                "title": "علمنا الرسول",
+                "description": "بسم الله الرحمن الرحيم\nقناة \" علمنا الرسول:  قناة تعليمية متخصصه فى تعليم وشرح وتبسيط للعقيده والاحكام فقهيه والسيرة النبوية وبرامج علمية ممتعه. فتابعونا",
+                "customUrl": "@alamanaerasyl",
+                "publishedAt": "2019-09-13T15:43:05Z",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://yt3.ggpht.com/ytc/AL5GRJVLHYocZvPbvJ9vztmffFLSYhJ9dAodGtYG_4g0=s88-c-k-c0x00ffffff-no-rj",
+                        "width": 88,
+                        "height": 88
+                    },
+                    "medium": {
+                        "url": "https://yt3.ggpht.com/ytc/AL5GRJVLHYocZvPbvJ9vztmffFLSYhJ9dAodGtYG_4g0=s240-c-k-c0x00ffffff-no-rj",
+                        "width": 240,
+                        "height": 240
+                    },
+                    "high": {
+                        "url": "https://yt3.ggpht.com/ytc/AL5GRJVLHYocZvPbvJ9vztmffFLSYhJ9dAodGtYG_4g0=s800-c-k-c0x00ffffff-no-rj",
+                        "width": 800,
+                        "height": 800
+                    }
+                },
+                "localized": {
+                    "title": "علمنا الرسول",
+                    "description": "بسم الله الرحمن الرحيم\nقناة \" علمنا الرسول:  قناة تعليمية متخصصه فى تعليم وشرح وتبسيط للعقيده والاحكام فقهيه والسيرة النبوية وبرامج علمية ممتعه. فتابعونا"
+                },
+                "country": "EG"
+            },
+            "contentDetails": {
+                "relatedPlaylists": {
+                    "likes": "",
+                    "uploads": "UUJ6pXA3uUaG9o4fnRm9u0Jg"
+                }
+            },
+            "statistics": {
+                "viewCount": "531495",
+                "subscriberCount": "6390",
+                "hiddenSubscriberCount": false,
+                "videoCount": "567"
+            }
+        }
+    ]
+}
