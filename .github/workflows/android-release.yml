@@ -57,6 +57,10 @@ jobs:
       # Runs a single command using the runner’s shell
       - name: Get dependencies
         run: flutter pub get
+      
+      # remove flutter info plus windows
+      - name: remove flutter info plus windows
+        run: flutter pub remove package_info_plus_windows
 
       # analyzing the app to know that there is an build issue or not
       - name: Run analyzer
