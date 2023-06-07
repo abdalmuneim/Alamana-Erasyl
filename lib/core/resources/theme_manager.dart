@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sanad_abu_yousef/core/resources/app_color.dart';
+import 'package:alamanaerasyl/core/resources/app_color.dart';
 
 ThemeData get applicationTheme => ThemeData(
       useMaterial3: true,

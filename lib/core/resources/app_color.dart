@@ -1,8 +1,8 @@
-import 'package:flutter/painting.dart';
+import 'package:flutter/cupertino.dart';
 
 class AppColors {
   static const Color scaffoldColor = Color(0xffF9FAFF);
-  static const Color mainApp = Color(0xFF26A260);
+  static const Color mainApp = CupertinoColors.activeGreen;
   static const Color lightBlue = Color(0xFF35A226);
 
   static const Color lightRed = Color(0xffDE3131);

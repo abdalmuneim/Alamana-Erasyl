@@ -1,0 +1,11 @@
+{
+  "main": "Home",
+  "fatwas": "Fatwas",
+  "playLists": "Play Lists",
+  "subscribe": "Subscribe",
+  "video": "Video",
+  "slidToShow": "Slid To Show Videos",
+  "errorOperation": "Operation failed try again",
+  "successOperation": "Operation done thank you",
+  "alamnaAlrasol": "Alamna Alrasol"
+}

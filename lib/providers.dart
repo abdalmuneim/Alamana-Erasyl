@@ -1,16 +1,20 @@
+import 'package:alamanaerasyl/features/bottom_nav_bar/bottom_nav_bar_provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:provider/provider.dart';
-import 'package:sanad_abu_yousef/presentations/providers/all_videos_provider.dart';
-import 'package:sanad_abu_yousef/presentations/providers/tabs_provider.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/providers/all_videos_provider.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/providers/tabs_provider.dart';
 
-import 'package:sanad_abu_yousef/presentations/providers/playlists_provider.dart';
-import 'package:sanad_abu_yousef/presentations/providers/splash_provider.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/providers/playlists_provider.dart';
+import 'package:alamanaerasyl/features/splash/splash_provider.dart';
 
-import 'package:sanad_abu_yousef/presentations/providers/video_provider.dart';
-import 'package:sanad_abu_yousef/presentations/providers/videos_playlist_provider.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/providers/video_provider.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/providers/videos_playlist_provider.dart';
 
 class Providers {
   static List<SingleChildWidget> providers = [
+    /// bottom nav bar provider
+    ChangeNotifierProvider(create: (_) => BottomNavBarProvider()),
+
     /// all videos from playlist provider
     ChangeNotifierProvider(create: (_) => AllVideosProvider()),
 

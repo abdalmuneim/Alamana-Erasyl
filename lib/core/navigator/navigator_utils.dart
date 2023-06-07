@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sanad_abu_yousef/core/fields.dart';
-import 'package:sanad_abu_yousef/core/navigator/route_string.dart';
-import 'package:sanad_abu_yousef/core/navigator/routes.dart';
+import 'package:alamanaerasyl/core/utilities/fields.dart';
+import 'package:alamanaerasyl/core/navigator/route_string.dart';
+import 'package:alamanaerasyl/core/navigator/routes.dart';
 
 class NavigationService {
   static BuildContext get context =>

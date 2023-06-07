@@ -1,11 +1,15 @@
+import 'package:alamanaerasyl/features/bottom_nav_bar/bottom_nav_bar_view.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/fatwas/view/fatwas_view.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/views/all_videos_view.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/views/video_view.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/data/models/video_model.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sanad_abu_yousef/core/fields.dart';
-import 'package:sanad_abu_yousef/core/navigator/route_string.dart';
-import 'package:sanad_abu_yousef/presentations/view/about_view.dart';
-import 'package:sanad_abu_yousef/presentations/view/playlist/videos_playlist_view.dart';
-import 'package:sanad_abu_yousef/presentations/view/splash_view.dart';
-import 'package:sanad_abu_yousef/presentations/view/tabs_view.dart';
+import 'package:alamanaerasyl/core/utilities/fields.dart';
+import 'package:alamanaerasyl/core/navigator/route_string.dart';
+import 'package:alamanaerasyl/features/about_us/about_view.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/views/playlist/videos_playlist_view.dart';
+import 'package:alamanaerasyl/features/splash/splash_view.dart';
 
 class Routes {
   static final GoRouter router = GoRouter(
@@ -14,48 +18,71 @@ class Routes {
       GoRoute(
         name: RouteStrings.splashPage,
         path: RouteStrings.splashPage,
-        builder: (BuildContext context, GoRouterState state) {
-          return const SplashView();
-        },
+        builder: (BuildContext context, GoRouterState state) =>
+            const SplashView(),
       ),
 
-      /// tabs
+      /// bottomNavBar
       GoRoute(
-        name: RouteStrings.tabs,
-        path: RouteStrings.tabs,
-        builder: (BuildContext context, GoRouterState state) {
-          return const TabsView();
-        },
+        name: RouteStrings.bottomNavBar,
+        path: RouteStrings.bottomNavBar,
+        builder: (BuildContext context, GoRouterState state) =>
+            const BottomNavBarView(),
+        routes: [
+          /// all videos
+          GoRoute(
+            name: RouteStrings.allVideos,
+            path: RouteStrings.allVideos,
+            builder: (BuildContext context, GoRouterState state) =>
+                const AllVideosView(),
+          ),
+
+          /// videos playlist
+          GoRoute(
+            name: RouteStrings.videosPlaylist,
+            path: RouteStrings.videosPlaylist,
+            builder: (BuildContext context, GoRouterState state) {
+              final String id = state.queryParams[Fields.id]!;
+              final String title = state.queryParams[Fields.title]!;
+              final String description = state.queryParams[Fields.description]!;
+              final String url = state.queryParams[Fields.url]!;
+              final String itemCount = state.queryParams[Fields.itemCount]!;
+              return VideosPlaylistView(
+                id: id,
+                title: title,
+                description: description,
+                url: url,
+                itemCount: itemCount,
+              );
+            },
+          ),
+
+          /// video viewer
+          GoRoute(
+            path: RouteStrings.videoViewer,
+            name: RouteStrings.videoViewer,
+            builder: (context, state) {
+              return VideoView(video: Video());
+            },
+          ),
+
+          /// Fatwas page
+          GoRoute(
+            path: RouteStrings.fatwas,
+            name: RouteStrings.fatwas,
+            builder: (BuildContext context, GoRouterState state) =>
+                const FatwasView(),
+          ),
+        ],
       ),
 
-      /// videos playlist
+      /// about us
       GoRoute(
-        name: RouteStrings.videosPlaylist,
-        path: RouteStrings.videosPlaylist,
-        builder: (BuildContext context, GoRouterState state) {
-          final String id = state.queryParams[Fields.id]!;
-          final String title = state.queryParams[Fields.title]!;
-          final String description = state.queryParams[Fields.description]!;
-          final String url = state.queryParams[Fields.url]!;
-          final String itemCount = state.queryParams[Fields.itemCount]!;
-          return VideosPlaylistView(
-            id: id,
-            title: title,
-            description: description,
-            url: url,
-            itemCount: itemCount,
-          );
-        },
-      ),
-
-      /// videos playlist
-      GoRoute(
-        name: RouteStrings.about,
-        path: RouteStrings.about,
-        builder: (BuildContext context, GoRouterState state) {
-          return const AboutView();
-        },
-      ),
+        name: RouteStrings.aboutUs,
+        path: RouteStrings.aboutUs,
+        builder: (BuildContext context, GoRouterState state) =>
+            const AboutUsView(),
+      )
     ],
   );
 }
