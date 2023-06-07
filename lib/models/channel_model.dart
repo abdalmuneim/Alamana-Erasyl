@@ -1,4 +1,4 @@
-import 'package:sanad_abu_yousef/models/video_model.dart';
+import 'package:alamanaerasyl/models/video_model.dart';
 
 class Channel {
   final String? id;

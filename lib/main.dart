@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:sanad_abu_yousef/core/navigator/routes.dart';
-import 'package:sanad_abu_yousef/core/resources/theme_manager.dart';
-import 'package:sanad_abu_yousef/providers.dart';
+import 'package:alamanaerasyl/core/navigator/routes.dart';
+import 'package:alamanaerasyl/core/resources/theme_manager.dart';
+import 'package:alamanaerasyl/providers.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]);
+  /* await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  ); */
   runApp(const MyApp());
 }
 

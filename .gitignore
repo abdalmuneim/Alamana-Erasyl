@@ -42,4 +42,5 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-# /lib/core/api_key.dart
+/lib/core/app_const/api_key.dart
+/lib/core/app_const/constant.dart

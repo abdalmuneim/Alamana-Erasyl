@@ -3,8 +3,8 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:sanad_abu_yousef/core/resources/app_color.dart';
-import 'package:sanad_abu_yousef/core/resources/assets_manager.dart';
+import 'package:alamanaerasyl/core/resources/app_color.dart';
+import 'package:alamanaerasyl/core/resources/assets_manager.dart';
 
 class LoadingWidget extends StatelessWidget {
   const LoadingWidget({Key? key, this.description}) : super(key: key);

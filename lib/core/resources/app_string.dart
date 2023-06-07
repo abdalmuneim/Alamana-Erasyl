@@ -9,4 +9,6 @@ class AppString {
       'خريج كليه الشريعة والقانون سنة 1995 امام وخطيب بوزارة الاوقاف المصرية';
   static String get mahmoud => 'فضيلة الشيخ/ محمود شعبان الجعم';
   static String get infMahmoud => 'خريج كليه الشريعة والقانون سنة 1995';
+  static String get successPay => "عمليه ناجحة شكرا لك";
+  static String get failedPay => "فشلت العمليه اعد المحاولة";
 }
