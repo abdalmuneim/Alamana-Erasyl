@@ -1,12 +1,12 @@
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/views/playlist/videos_playlist_view.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:provider/provider.dart';
-import 'package:alamanaerasyl/core/utilities/fields.dart';
 import 'package:alamanaerasyl/core/navigator/navigator_utils.dart';
 import 'package:alamanaerasyl/core/navigator/route_string.dart';
 import 'package:alamanaerasyl/core/resources/size_config.dart';
 import 'package:alamanaerasyl/core/widgets/loading_widget.dart';
-import 'package:alamanaerasyl/models/playlist_model.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/data/models/playlist_model.dart';
 import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/providers/playlists_provider.dart';
 
 class PlaylistsView extends StatefulWidget {
@@ -24,8 +24,23 @@ class _PlaylistsViewState extends State<PlaylistsView> {
     return GestureDetector(
       onTap: () {
         BuildContext context = NavigationService.context;
+        PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
+          context,
+          settings: RouteSettings(
+            name: RouteStrings.videosPlaylist,
+          ),
+          screen: VideosPlaylistView(
+            id: items.id ?? "",
+            title: items.snippet?.title ?? "",
+            description: items.snippet?.description ?? "",
+            url: items.snippet?.thumbnails?.thumbnailsDefault?.url ?? "",
+            itemCount: items.contentDetails?.itemCount.toString() ?? "",
+          ),
+          withNavBar: true,
+          pageTransitionAnimation: PageTransitionAnimation.cupertino,
+        );
 
-        return context.pushNamed(
+        /*  return context.pushNamed(
           RouteStrings.videosPlaylist,
           queryParams: <String, String>{
             Fields.id: items.id ?? "",
@@ -34,7 +49,7 @@ class _PlaylistsViewState extends State<PlaylistsView> {
             Fields.url: items.snippet?.thumbnails?.thumbnailsDefault?.url ?? "",
             Fields.itemCount: items.contentDetails?.itemCount.toString() ?? "",
           },
-        );
+        ); */
       },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),

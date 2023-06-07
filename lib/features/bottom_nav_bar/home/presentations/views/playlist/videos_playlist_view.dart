@@ -1,10 +1,12 @@
+import 'package:alamanaerasyl/core/navigator/route_string.dart';
+import 'package:alamanaerasyl/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:provider/provider.dart';
 import 'package:alamanaerasyl/core/utilities/extensions.dart';
-import 'package:alamanaerasyl/core/resources/app_string.dart';
 import 'package:alamanaerasyl/core/resources/size_config.dart';
 import 'package:alamanaerasyl/core/widgets/loading_widget.dart';
-import 'package:alamanaerasyl/models/video_model.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/data/models/video_model.dart';
 import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/providers/videos_playlist_provider.dart';
 
 import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/views/video_view.dart';
@@ -119,7 +121,7 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  '${widget.itemCount} ${AppString.video}',
+                  '${widget.itemCount} ${S.of(context).video}',
                   style: TextStyle(
                     color: Colors.grey[600],
                     fontSize: 16.0,
@@ -137,12 +139,23 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
 
   _buildVideo(Video video, int index) {
     return GestureDetector(
-      onTap: () => Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (_) => VideoView(video: video),
-        ),
-      ),
+      onTap: () {
+        PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
+          context,
+          settings: RouteSettings(
+            name: RouteStrings.videoViewer,
+          ),
+          screen: VideoView(video: video),
+          withNavBar: true,
+          pageTransitionAnimation: PageTransitionAnimation.cupertino,
+        );
+        /*   Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => VideoView(video: video),
+          ),
+        ); */
+      },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
         padding: const EdgeInsets.all(10.0),

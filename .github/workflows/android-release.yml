@@ -5,9 +5,8 @@ on:
   # Triggers the workflow on push or pull request events for the "release" branch;
   # you can change it according to your requirement
 
-  pull_request:
-    types: [closed]
-    branches: ["main"]
+  push:
+    branches: ["release"]
 
   # Allows you to run this workflow manually from the Actions tab from your GitHub repo
   # (a workflow run is made up of one or more jobs that can run sequentially or in parallel)

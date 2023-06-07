@@ -1,4 +1,4 @@
-import 'package:alamanaerasyl/models/video_model.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/data/models/video_model.dart';
 
 class Channel {
   final String? id;

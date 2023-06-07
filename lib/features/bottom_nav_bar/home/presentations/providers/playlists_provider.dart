@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:alamanaerasyl/models/playlist_model.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/data/models/playlist_model.dart';
 import 'package:alamanaerasyl/core/services/api_service.dart';
 
 class PlaylistsProvider extends ChangeNotifier {

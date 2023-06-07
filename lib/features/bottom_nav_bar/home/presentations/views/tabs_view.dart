@@ -1,10 +1,12 @@
+import 'package:alamanaerasyl/core/resources/app_color.dart';
 import 'package:alamanaerasyl/core/services/newer_version.dart';
+import 'package:alamanaerasyl/features/about_us/about_view.dart';
+import 'package:alamanaerasyl/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:provider/provider.dart';
 import 'package:alamanaerasyl/core/navigator/navigator_utils.dart';
 import 'package:alamanaerasyl/core/navigator/route_string.dart';
-import 'package:alamanaerasyl/core/resources/app_string.dart';
 import 'package:alamanaerasyl/core/resources/size_config.dart';
 import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/providers/all_videos_provider.dart';
 import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/providers/playlists_provider.dart';
@@ -31,12 +33,6 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
     readPlaylist.initPlaylist();
     NewerVersion.instance.initNewerVersion();
     super.initState();
-  }
-
-  @override
-  void didChangeDependencies() {
-    read.listenToNetwork();
-    super.didChangeDependencies();
   }
 
   @override
@@ -100,7 +96,7 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
-                      '${watchAllVideos.channel?.subscriberCount ?? ""} ${AppString.subscribers}',
+                      '${watchAllVideos.channel?.subscriberCount ?? ""} ${S.of(context).subscribe}',
                       style: TextStyle(
                         color: Colors.grey[600],
                         fontSize: 16.0,
@@ -120,8 +116,14 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
           child: IconButton(
             onPressed: () {
               BuildContext context = NavigationService.context;
-
-              return context.pushNamed(RouteStrings.about);
+              PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
+                context,
+                settings: RouteSettings(name: RouteStrings.aboutUs),
+                screen: const AboutUsView(),
+                withNavBar: true,
+                pageTransitionAnimation: PageTransitionAnimation.cupertino,
+              );
+              // return context.pushNamed(RouteStrings.about);
             },
             icon: const Icon(
               Icons.info_outline,
@@ -159,7 +161,7 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
                   indicatorSize: TabBarIndicatorSize.tab,
                   indicator: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
-                    color: Colors.orange,
+                    color: AppColors.mainApp,
                   ),
                   controller: controller,
                   isScrollable: true,
@@ -167,13 +169,13 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
                   tabs: [
                     Tab(
                       child: Text(
-                        AppString.mainScreen,
+                        S.of(context).main,
                         style: Theme.of(context).textTheme.labelLarge,
                       ),
                     ),
                     Tab(
                       child: Text(
-                        AppString.playlist,
+                        S.of(context).playLists,
                         style: Theme.of(context).textTheme.labelLarge,
                       ),
                     ),

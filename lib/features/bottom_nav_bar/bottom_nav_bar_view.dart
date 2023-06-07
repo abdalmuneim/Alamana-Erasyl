@@ -1,3 +1,4 @@
+import 'package:alamanaerasyl/features/bottom_nav_bar/fatwas/view/fatwas_view.dart';
 import 'package:alamanaerasyl/generated/l10n.dart';
 import 'package:alamanaerasyl/features/bottom_nav_bar/bottom_nav_bar_provider.dart';
 import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/views/tabs_view.dart';
@@ -6,74 +7,69 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:provider/provider.dart';
 
-class BottomNavBarPage extends StatefulWidget {
-  const BottomNavBarPage({super.key});
+class BottomNavBarView extends StatefulWidget {
+  const BottomNavBarView({super.key});
 
   @override
-  State<BottomNavBarPage> createState() => _BottomNavBarPageState();
+  State<BottomNavBarView> createState() => _BottomNavBarViewState();
 }
 
-class _BottomNavBarPageState extends State<BottomNavBarPage> {
-  late BottomNavBarProvider read;
-
-  late BottomNavBarProvider watch;
-
+class _BottomNavBarViewState extends State<BottomNavBarView> {
   @override
-  void initState() {
-    read = context.read<BottomNavBarProvider>();
-    watch = context.watch<BottomNavBarProvider>();
-    super.initState();
+  void didChangeDependencies() {
+    context.read<BottomNavBarProvider>().listenToNetwork();
+    super.didChangeDependencies();
   }
 
   @override
   Widget build(BuildContext context) {
+    // BottomNavBarProvider read = context.read<BottomNavBarProvider>();
+    BottomNavBarProvider watch = context.watch<BottomNavBarProvider>();
     return PersistentTabView(
       context,
       controller: watch.controller,
       screens: const [
         TabsView(),
+        FatwasView(),
       ],
       items: [
         PersistentBottomNavBarItem(
-          icon: const Icon(CupertinoIcons.home),
+          icon: const Icon(Icons.video_collection_outlined),
           title: (S.of(context).main),
           activeColorPrimary: CupertinoColors.activeBlue,
-          inactiveColorPrimary: CupertinoColors.systemGrey,
+          inactiveColorPrimary: Colors.black26,
         ),
         PersistentBottomNavBarItem(
-          icon: const Icon(CupertinoIcons.settings),
+          icon: const Icon(CupertinoIcons.question_diamond),
           title: (S.of(context).fatwas),
-          activeColorPrimary: CupertinoColors.activeBlue,
-          inactiveColorPrimary: CupertinoColors.systemGrey,
+          activeColorPrimary: Colors.red[700]!,
+          inactiveColorPrimary: Colors.black26,
         ),
       ],
       confineInSafeArea: true,
-      backgroundColor: Colors.white, // Default is Colors.white.
+      backgroundColor: CupertinoColors.activeGreen, // Default is Colors.white.
       handleAndroidBackButtonPress: true, // Default is true.
       resizeToAvoidBottomInset:
-          true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
+          false, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
       stateManagement: true, // Default is true.
       hideNavigationBarWhenKeyboardShows:
           true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
-      decoration: NavBarDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-        colorBehindNavBar: Colors.white,
-      ),
+
       popAllScreensOnTapOfSelectedTab: true,
       popActionScreens: PopActionScreensType.all,
       itemAnimationProperties: const ItemAnimationProperties(
         // Navigation Bar's items animation properties.
-        duration: Duration(milliseconds: 200),
+        duration: Duration(milliseconds: 300),
         curve: Curves.ease,
       ),
       screenTransitionAnimation: const ScreenTransitionAnimation(
         // Screen transition animation on change of selected tab.
         animateTabTransition: true,
         curve: Curves.ease,
-        duration: Duration(milliseconds: 200),
+        duration: Duration(milliseconds: 300),
       ),
       navBarStyle:
-          NavBarStyle.style1, // Choose the nav bar style with this property.
+          NavBarStyle.style9, // Choose the nav bar style with this property.
     );
   }
 }

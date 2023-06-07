@@ -69,6 +69,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Play Lists`
+  String get playLists {
+    return Intl.message(
+      'Play Lists',
+      name: 'playLists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subscribe`
+  String get subscribe {
+    return Intl.message(
+      'Subscribe',
+      name: 'subscribe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Video`
+  String get video {
+    return Intl.message(
+      'Video',
+      name: 'video',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Slid To Show Videos`
+  String get slidToShow {
+    return Intl.message(
+      'Slid To Show Videos',
+      name: 'slidToShow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Operation failed try again`
+  String get errorOperation {
+    return Intl.message(
+      'Operation failed try again',
+      name: 'errorOperation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Operation done thank you`
+  String get successOperation {
+    return Intl.message(
+      'Operation done thank you',
+      name: 'successOperation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Alamna Alrasol`
+  String get alamnaAlrasol {
+    return Intl.message(
+      'Alamna Alrasol',
+      name: 'alamnaAlrasol',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

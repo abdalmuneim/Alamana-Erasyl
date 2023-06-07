@@ -1,3 +1,4 @@
+import 'package:alamanaerasyl/features/bottom_nav_bar/bottom_nav_bar_provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/providers/all_videos_provider.dart';
@@ -11,6 +12,9 @@ import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/provide
 
 class Providers {
   static List<SingleChildWidget> providers = [
+    /// bottom nav bar provider
+    ChangeNotifierProvider(create: (_) => BottomNavBarProvider()),
+
     /// all videos from playlist provider
     ChangeNotifierProvider(create: (_) => AllVideosProvider()),
 

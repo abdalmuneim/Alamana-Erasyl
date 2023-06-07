@@ -19,6 +19,6 @@ class SplashProvider extends ChangeNotifier {
 
   navigator() {
     final context = NavigationService.context;
-    context.goNamed(RouteStrings.tabs);
+    context.goNamed(RouteStrings.bottomNavBar);
   }
 }

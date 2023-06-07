@@ -4,8 +4,8 @@ import 'package:alamanaerasyl/core/resources/app_string.dart';
 import 'package:alamanaerasyl/core/resources/assets_manager.dart';
 import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/widgets/card_info.dart';
 
-class AboutView extends StatelessWidget {
-  const AboutView({Key? key}) : super(key: key);
+class AboutUsView extends StatelessWidget {
+  const AboutUsView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

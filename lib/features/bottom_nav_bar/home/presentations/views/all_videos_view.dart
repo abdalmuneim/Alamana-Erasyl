@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:provider/provider.dart';
 import 'package:alamanaerasyl/core/widgets/loading_widget.dart';
-import 'package:alamanaerasyl/models/video_model.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/data/models/video_model.dart';
 import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/providers/all_videos_provider.dart';
 import 'package:alamanaerasyl/features/bottom_nav_bar/home/presentations/views/video_view.dart';
 
@@ -18,12 +19,20 @@ class _AllVideosViewState extends State<AllVideosView> {
 
   _buildVideo(Video video) {
     return GestureDetector(
-      onTap: () => Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (_) => VideoView(video: video),
-        ),
-      ),
+      onTap: () {
+        PersistentNavBarNavigator.pushNewScreen(
+          context,
+          screen: VideoView(video: video),
+          withNavBar: true,
+          pageTransitionAnimation: PageTransitionAnimation.cupertino,
+        );
+        /* Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => VideoView(video: video),
+          ),
+        ); */
+      },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
         padding: const EdgeInsets.all(10.0),

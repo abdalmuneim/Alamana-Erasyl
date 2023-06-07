@@ -3,10 +3,10 @@ import 'dart:io';
 import 'package:alamanaerasyl/core/app_const/api_key.dart';
 import 'package:alamanaerasyl/core/app_const/constant.dart';
 import 'package:http/http.dart' as http;
-import 'package:alamanaerasyl/models/channel_model.dart';
-import 'package:alamanaerasyl/models/error_model.dart';
-import 'package:alamanaerasyl/models/playlist_model.dart';
-import 'package:alamanaerasyl/models/video_model.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/data/models/channel_model.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/data/models/error_model.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/data/models/playlist_model.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/data/models/video_model.dart';
 import 'package:alamanaerasyl/core/services/socet.dart';
 
 class APIService {

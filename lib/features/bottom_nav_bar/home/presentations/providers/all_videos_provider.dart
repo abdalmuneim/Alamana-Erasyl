@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:alamanaerasyl/models/channel_model.dart';
-import 'package:alamanaerasyl/models/video_model.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/data/models/channel_model.dart';
+import 'package:alamanaerasyl/features/bottom_nav_bar/home/data/models/video_model.dart';
 import 'package:alamanaerasyl/core/services/api_service.dart';
 
 class AllVideosProvider extends ChangeNotifier {

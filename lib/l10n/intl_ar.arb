@@ -1,4 +1,11 @@
 {
   "main": "الرئيسية",
-  "fatwas": "فتاوي"
+  "fatwas": "فتاوي",
+  "playLists": "قوائم التشغيل",
+  "subscribe": "مشترك",
+  "video": "فيديو",
+  "slidToShow": "إسحب لإظهار الفيديوهات",
+  "errorOperation": "فشلت العمليه اعد المحاولة",
+  "successOperation": "عمليه ناجحة شكرا لك",
+  "alamnaAlrasol": "علمنا الرسول"
 }
