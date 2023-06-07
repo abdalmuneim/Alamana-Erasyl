@@ -69,21 +69,21 @@ jobs:
           file-path: pubspec.yaml
 
       # Decoded the base64 encoded keystore value saved as a secret to ID android_keystore
-      - name: Download Android keystore
-        id: android_keystore
-        uses: timheuer/base64-to-file@v1.0.3
-        with:
-          fileName: upload-keystore.jks
-          # can be obtained by doing this command line base64 <keystore path> then save it in github actions
-          encodedString: ${{ secrets.KEYSTORE_BASE64 }}
+      # - name: Download Android keystore
+      #   id: android_keystore
+      #   uses: timheuer/base64-to-file@v1.0.3
+      #   with:
+      #     fileName: upload-keystore.jks
+      #     # can be obtained by doing this command line base64 <keystore path> then save it in github actions
+      #     encodedString: ${{ secrets.KEYSTORE_BASE64 }}
 
       # --- Created key.properties using the secrets and android_keystore ---
-      - name: Create key.properties
-        run: |
-          echo "storeFile=${{ steps.android_keystore.outputs.filePath }}" > android/key.properties
-          echo "storePassword=${{ secrets.STORE_PASSWORD }}" >> android/key.properties
-          echo "keyPassword=${{ secrets.KEY_PASSWORD }}" >> android/key.properties
-          echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> android/key.properties
+      # - name: Create key.properties
+      #   run: |
+      #     echo "storeFile=${{ steps.android_keystore.outputs.filePath }}" > android/key.properties
+      #     echo "storePassword=${{ secrets.STORE_PASSWORD }}" >> android/key.properties
+      #     echo "keyPassword=${{ secrets.KEY_PASSWORD }}" >> android/key.properties
+      #     echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> android/key.properties
 
       # Runs a set of commands using the runners shell
       - name: Start release build aab
