@@ -21,18 +21,19 @@ class NewerVersion {
   }
 
   void _checkVersion(NewVersion newVersion) async {
-    VersionStatus? status = await newVersion.getVersionStatus();
-    newVersion.showUpdateDialog(
-      context: _context,
-      versionStatus: status!,
-      dialogTitle: "UPDATE!!!",
-      // dismissButtonText: "Skip",
-      dialogText:
-          "Please update the app from ${status.localVersion} to ${status.storeVersion}",
-      dismissAction: () {
-        SystemNavigator.pop();
-      },
-      updateButtonText: "Let's update",
-    );
+    await newVersion.getVersionStatus().then((value) {
+      newVersion.showUpdateDialog(
+        context: _context,
+        versionStatus: value!,
+        dialogTitle: "UPDATE!!!",
+        // dismissButtonText: "Skip",
+        dialogText:
+            "Please update the app from ${value.localVersion} to ${value.storeVersion}",
+        dismissAction: () {
+          SystemNavigator.pop();
+        },
+        updateButtonText: "Let's update",
+      );
+    });
   }
 }
