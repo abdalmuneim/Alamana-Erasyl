@@ -42,11 +42,12 @@ class Routes {
             name: RouteStrings.videosPlaylist,
             path: RouteStrings.videosPlaylist,
             builder: (BuildContext context, GoRouterState state) {
-              final String id = state.queryParams[Fields.id]!;
-              final String title = state.queryParams[Fields.title]!;
-              final String description = state.queryParams[Fields.description]!;
-              final String url = state.queryParams[Fields.url]!;
-              final String itemCount = state.queryParams[Fields.itemCount]!;
+              final String id = state.queryParameters[Fields.id]!;
+              final String title = state.queryParameters[Fields.title]!;
+              final String description =
+                  state.queryParameters[Fields.description]!;
+              final String url = state.queryParameters[Fields.url]!;
+              final String itemCount = state.queryParameters[Fields.itemCount]!;
               return VideosPlaylistView(
                 id: id,
                 title: title,

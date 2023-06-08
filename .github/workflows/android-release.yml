@@ -54,15 +54,9 @@ jobs:
             android/.gradle/
           key: ${{ runner.os }}-build_and_android-${{ hashFiles('**/*.gradle*', 'pubspec.lock') }}
 
-      
-
       # Runs a single command using the runner’s shell
       - name: Get dependencies
         run: flutter pub get
-
-      # upgrade dart pub
-      - name: upgrade dart pub
-        run: dart pub upgrade
 
       # analyzing the app to know that there is an build issue or not
       - name: Run analyzer

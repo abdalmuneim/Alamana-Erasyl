@@ -14,7 +14,7 @@ class NavigatorUtils {
 
   static void goToVideosPlaylist(String id) => _context.pushNamed(
         RouteStrings.videosPlaylist,
-        queryParams: <String, String>{
+        queryParameters: <String, String>{
           Fields.videos: id,
         },
       );
