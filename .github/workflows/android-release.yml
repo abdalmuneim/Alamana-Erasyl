@@ -87,8 +87,8 @@ jobs:
       #     echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> android/key.properties
 
       # Runs a set of commands using the runners shell
-      - name: Start release build aab
-        run: flutter build appbundle --release
+      # - name: Start release build aab
+      #   run: flutter build appbundle --release
 
       - name: Start release build APK
         run: flutter build apk --release
@@ -101,11 +101,11 @@ jobs:
           path: build/app/outputs/flutter-apk/app-release.apk
 
       # Uploaded the AAP release as an artifact to be used in the next job
-      - name: Upload AAP Release
-        uses: actions/upload-artifact@v2
-        with:
-          name: aap-release
-          path: build/app/outputs/bundle/release/app-release.aab
+      # - name: Upload AAP Release
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: aap-release
+      #     path: build/app/outputs/bundle/release/app-release.aab
 
       # --- creating github apk-release ---
       - name: Create apk-release in GitHub
@@ -117,13 +117,13 @@ jobs:
           allowUpdates: true
 
       # --- creating github aap-release ---
-      - name: Create aap-release in GitHub
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "build/app/outputs/bundle/release/app-release.aab"
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag: aap_Release_${{ steps.read-version.outputs.version-number }}
-          allowUpdates: true
+      # - name: Create aap-release in GitHub
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     artifacts: "build/app/outputs/bundle/release/app-release.aab"
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     tag: aap_Release_${{ steps.read-version.outputs.version-number }}
+      #     allowUpdates: true
 
       # --- Deploy to google play store ---
       # Used the upload-google.play@v1 workflow with the PLAYSTORE_ACCOUNT_KEY secret,
