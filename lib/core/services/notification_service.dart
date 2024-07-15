@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:alamanaelrasyl/core/app_const/constant.dart';
 import 'package:alamanaelrasyl/core/services/firebase_collec.dart';
 import 'package:alamanaelrasyl/core/services/get_device_id.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -111,13 +112,13 @@ class NotificationServiceImpl implements NotificationService {
       onDidReceiveNotificationResponse: (NotificationResponse details) async {
         try {
           if (details.payload != null) {
-            print(details.payload!);
+            log("payload: ${details.payload!}");
           } else {
             NavigationService.context
                 .pushReplacementNamed(RouteStrings.splashPage);
           }
         } catch (e) {
-          print(e);
+          log("error: ${e.toString()}");
         }
         return;
       },
@@ -127,7 +128,7 @@ class NotificationServiceImpl implements NotificationService {
     FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
       print("--------------- On Messaging: ------------");
       print(
-          "image: ${message.data['image']} \ntitle: ${message.notification!.title} \n${message.notification?.body}");
+          "title: ${message.notification!.title} \nbody: ${message.notification?.body} \ndata: ${jsonEncode(message.data)}");
 
       BigTextStyleInformation bigTextStyleInformation = BigTextStyleInformation(
         message.notification!.body.toString(),
@@ -143,6 +144,7 @@ class NotificationServiceImpl implements NotificationService {
         'notification',
         styleInformation: bigTextStyleInformation,
         priority: Priority.high,
+        visibility: NotificationVisibility.public,
         playSound: true,
         sound: const RawResourceAndroidNotificationSound('notification'),
         fullScreenIntent: true,
@@ -197,6 +199,7 @@ class NotificationServiceImpl implements NotificationService {
         "notification": {
           "title": title,
           "body": body,
+          "image": AppConstant.logo,
         },
         "data": data,
       }

@@ -17,9 +17,19 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    NotificationServiceImpl();
     context.read<SplashProvider>().startTimer();
+    initFCM();
     super.initState();
+  }
+
+  initFCM() async {
+    final notif = NotificationServiceImpl();
+    notif.pushNotification(
+      deviceTokens: [await notif.getFCMToken() ?? ""],
+      body: "test body 2",
+      title: "test title 2",
+      data: {"other": "other data 2"},
+    );
   }
 
   @override
