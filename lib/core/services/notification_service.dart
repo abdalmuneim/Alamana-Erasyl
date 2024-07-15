@@ -226,7 +226,7 @@ class NotificationServiceImpl implements NotificationService {
 
   Future<dynamic> _loadFileClientData() async {
     final String response = await rootBundle.loadString(
-        'assets/alamna-el-rasyl-firebase-adminsdk-csvg9-b0268ec133.json');
+        'assets/alamna-el-rasyl-firebase-adminsdk-csvg9-d9239d88b1.json');
     final data = await json.decode(response);
     final clientModel = ClientModel.fromMap(data);
     return clientModel;

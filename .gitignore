@@ -9,7 +9,7 @@
 .history
 .svn/
 migrate_working_dir/
-assets/alamna-el-rasyl-firebase-adminsdk-csvg9-b0268ec133.json
+# assets/alamna-el-rasyl-firebase-adminsdk-csvg9-b0268ec133.json
 
 # IntelliJ related
 *.iml
