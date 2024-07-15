@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "355042056705",
+    "project_id": "alamna-el-rasyl",
+    "storage_bucket": "alamna-el-rasyl.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355042056705:android:8756a6e6cee0514b69fe00",
+        "android_client_info": {
+          "package_name": "com.mnemdev.alamna"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV9-oi_u_nNdgD4XFp99mHwaEebvAYeVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,16 @@
+{
+  "main": "الرئيسية",
+  "fatwas": "فتاوي",
+  "playLists": "قوائم التشغيل",
+  "subscribe": "مشترك",
+  "video": "فيديو",
+  "slidToShow": "إسحب لإظهار الفيديوهات",
+  "errorOperation": "فشلت العمليه اعد المحاولة",
+  "successOperation": "عمليه ناجحة شكرا لك",
+  "alamnaAlrasol": "علمنا الرسول",
+  "supportus": "ادعمنا",
+  "aboutUs": "نحن",
+  "noDataFound": "لا يوجد بيانات",
+  "notHaveVideos": "لا يوجد فيديوهات",
+  "notHavePlayLists": "لا يوجد قوائم تشغيل"
+}
