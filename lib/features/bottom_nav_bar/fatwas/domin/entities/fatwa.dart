@@ -3,6 +3,7 @@ import 'package:equatable/equatable.dart';
 class Fatwa extends Equatable {
   final int? id;
   final int? reactCount;
+  final int? shareCount;
   final String? deviceID;
   final String? fatwaDescription;
   final String? reply;
@@ -18,15 +19,17 @@ class Fatwa extends Equatable {
     this.reply,
     this.createAt,
     this.userImg,
-    this.replyImg,
     this.replyAt,
+    this.replyImg,
+    this.shareCount,
   });
 
   @override
   List<Object?> get props => [
         id,
-        reactCount,
         deviceID,
+        reactCount,
+        shareCount,
         fatwaDescription,
         reply,
         createAt,

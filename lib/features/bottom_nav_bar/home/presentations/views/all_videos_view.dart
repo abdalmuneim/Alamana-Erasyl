@@ -5,6 +5,7 @@ import 'package:alamanaelrasyl/core/widgets/loading_widget.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/data/models/video_model.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/providers/all_videos_provider.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/video_view.dart';
+import 'package:sizer/sizer.dart';
 
 class AllVideosView extends StatefulWidget {
   const AllVideosView({super.key});
@@ -55,12 +56,19 @@ class _AllVideosViewState extends State<AllVideosView> {
             ),
             const SizedBox(width: 10.0),
             Expanded(
-              child: Text(
-                video.title ?? "",
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 18.0,
-                ),
+              child: Column(
+                children: [
+                  Text(
+                    video.title ?? "",
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontSize: 10.sp,
+                        ),
+                  ),
+                  Text(video.description ?? "",
+                      style: Theme.of(context).textTheme.bodySmall,
+                    maxLines: 5,
+                  ),
+                ],
               ),
             ),
           ],

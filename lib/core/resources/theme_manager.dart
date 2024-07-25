@@ -15,6 +15,7 @@ ThemeData get applicationTheme => ThemeData(
       primaryColorDark: Colors.black,
       disabledColor: Colors.grey,
       fontFamily: GoogleFonts.cairo().fontFamily,
+
       /// CardViewTheme
       cardTheme: const CardTheme(),
 
@@ -65,7 +66,6 @@ ThemeData get applicationTheme => ThemeData(
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),
-
         headlineMedium: GoogleFonts.cairo(
           fontSize: 20,
           fontWeight: FontWeight.w600,
@@ -86,27 +86,46 @@ ThemeData get applicationTheme => ThemeData(
           fontWeight: FontWeight.w500,
           color: Colors.grey,
         ),
-        bodySmall: GoogleFonts.cairo(
-          fontSize: 13,
-          fontWeight: FontWeight.w400,
-          color: Colors.white,
+
+        titleLarge: GoogleFonts.cairo(
+          fontSize: 14.sp,
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
+        titleMedium: GoogleFonts.cairo(
+          fontSize: 12.sp,
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
         ),
         titleSmall: GoogleFonts.cairo(
           fontSize: 10.sp,
           color: Colors.white,
-        )
+        ),
+        bodyLarge: GoogleFonts.cairo(
+          fontSize: 10.sp,
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
+        bodyMedium: GoogleFonts.cairo(
+          fontSize: 10.sp,
+          color: Colors.black,
+        ),
+        bodySmall: GoogleFonts.cairo(
+          fontSize: 8.sp,
+          color: Colors.grey,
+        ),
       ),
 
       /// Input Decoration Theme (text form filed)
       inputDecorationTheme: InputDecorationTheme(
         fillColor: Colors.white,
-        hintStyle: GoogleFonts.heebo(
+        hintStyle: GoogleFonts.cairo(
           color: Colors.grey.withOpacity(.8),
         ),
-        errorStyle: GoogleFonts.heebo(
+        errorStyle: GoogleFonts.cairo(
           color: AppColors.red,
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 0),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         suffixIconColor: Colors.black,
         prefixIconColor: Colors.black,
         enabledBorder: OutlineInputBorder(

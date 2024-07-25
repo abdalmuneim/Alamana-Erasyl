@@ -231,10 +231,10 @@ class S {
   }
 
   /// `أكتب مسألتك!`
-  String get writeYourReqest {
+  String get writeYourRequest {
     return Intl.message(
       'أكتب مسألتك!',
-      name: 'writeYourReqest',
+      name: 'writeYourRequest',
       desc: '',
       args: [],
     );
@@ -247,6 +247,36 @@ class S {
       name: 'ValidatorRequestWordNum',
       desc: '',
       args: [word],
+    );
+  }
+
+  /// `Added Successfully and we will replay as soon as!`
+  String get addedSuccessfullyAndWeWillReplayAsSoonAs {
+    return Intl.message(
+      'Added Successfully and we will replay as soon as!',
+      name: 'addedSuccessfullyAndWeWillReplayAsSoonAs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SomeThing happened try again later!!`
+  String get somethingHappenedTryAgainLater {
+    return Intl.message(
+      'SomeThing happened try again later!!',
+      name: 'somethingHappenedTryAgainLater',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `طلب فتوى`
+  String get requestFatwa {
+    return Intl.message(
+      'طلب فتوى',
+      name: 'requestFatwa',
+      desc: '',
+      args: [],
     );
   }
 }

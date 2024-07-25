@@ -10,6 +10,8 @@ class Assets {
 
   /// Assets Images
   static String logo = "$_baseIMGPath/logo.png";
-  static String sanad = "$_baseIMGPath/sanad.png";
   static String mahmoud = "$_baseIMGPath/mahmoud.png";
+  static String sanad = "$_baseIMGPath/sanad.png";
+  static String user = "$_baseIMGPath/user.svg";
+  static String userOctagon = "$_baseIMGPath/user-octagon.svg";
 }

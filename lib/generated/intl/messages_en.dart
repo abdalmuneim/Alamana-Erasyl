@@ -26,6 +26,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "ValidatorRequestWordNum": m0,
         "aboutUs": MessageLookupByLibrary.simpleMessage("About Us"),
+        "addedSuccessfullyAndWeWillReplayAsSoonAs":
+            MessageLookupByLibrary.simpleMessage(
+                "Added Successfully and we will replay as soon as!"),
         "alamnaAlrasol": MessageLookupByLibrary.simpleMessage("Alamna Alrasol"),
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "errorOperation":
@@ -42,13 +45,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لا يوجد فيديوهات"),
         "playLists": MessageLookupByLibrary.simpleMessage("Play Lists"),
         "request": MessageLookupByLibrary.simpleMessage("طلب"),
+        "requestFatwa": MessageLookupByLibrary.simpleMessage("طلب فتوى"),
         "slidToShow":
             MessageLookupByLibrary.simpleMessage("Slid To Show Videos"),
+        "somethingHappenedTryAgainLater": MessageLookupByLibrary.simpleMessage(
+            "SomeThing happened try again later!!"),
         "subscribe": MessageLookupByLibrary.simpleMessage("Subscribe"),
         "successOperation":
             MessageLookupByLibrary.simpleMessage("Operation done thank you"),
         "supportus": MessageLookupByLibrary.simpleMessage("Support us"),
         "video": MessageLookupByLibrary.simpleMessage("Video"),
-        "writeYourReqest": MessageLookupByLibrary.simpleMessage("أكتب مسألتك!")
+        "writeYourRequest": MessageLookupByLibrary.simpleMessage("أكتب مسألتك!")
       };
 }

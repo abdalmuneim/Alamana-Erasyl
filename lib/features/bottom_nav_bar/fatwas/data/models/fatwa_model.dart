@@ -6,8 +6,9 @@ class FatwaModel extends Fatwa {
   const FatwaModel({
     super.id,
     super.reactCount,
-    super.deviceID,
     super.fatwaDescription,
+    super.deviceID,
+    super.shareCount,
     super.reply,
     super.createAt,
     super.userImg,
@@ -20,6 +21,9 @@ class FatwaModel extends Fatwa {
 
     if (id != null) {
       result.addAll({'id': id});
+    }
+    if (shareCount != null) {
+      result.addAll({'shareCount': id});
     }
     if (reactCount != null) {
       result.addAll({'reactCount': reactCount});
@@ -52,6 +56,7 @@ class FatwaModel extends Fatwa {
   factory FatwaModel.fromMap(Map<String, dynamic> map) {
     return FatwaModel(
       id: map['id']?.toInt(),
+      shareCount: map['shareCount']?.toInt(),
       reactCount: map['reactCount']?.toInt(),
       deviceID: map['deviceID'],
       fatwaDescription: map['fatwaDescription'],
@@ -70,7 +75,7 @@ class FatwaModel extends Fatwa {
 
   @override
   String toString() {
-    return 'FatwaModel(id: $id, reactCount: $reactCount, deviceID: $deviceID, fatwaDescription: $fatwaDescription, reply: $reply, createAt: $createAt, userImg: $userImg, replyImg: $replyImg, replyAt: $replyAt)';
+    return 'FatwaModel(id: $id, reactCount: $reactCount, shareCount: $shareCount, deviceID: $deviceID, fatwaDescription: $fatwaDescription, reply: $reply, createAt: $createAt, userImg: $userImg, replyImg: $replyImg, replyAt: $replyAt)';
   }
 
   @override
@@ -81,6 +86,7 @@ class FatwaModel extends Fatwa {
         other.id == id &&
         other.reactCount == reactCount &&
         other.deviceID == deviceID &&
+        other.shareCount == shareCount &&
         other.fatwaDescription == fatwaDescription &&
         other.reply == reply &&
         other.createAt == createAt &&

@@ -9,6 +9,7 @@ import 'package:alamanaelrasyl/features/bottom_nav_bar/fatwas/domin/entities/fat
 import 'package:alamanaelrasyl/generated/l10n.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -33,19 +34,30 @@ class FatwasProvider extends ChangeNotifier {
 
       Map<String, dynamic> data = FatwaModel(
         id: _fatwas.length + 1,
-        createAt: DateFormat.yMd("ar").add_jm().format(DateTime.now()),
+        createAt: DateFormat.yMEd("ar").add_jm().format(DateTime.now()),
         deviceID: await GetDeviceId.instance.getDeviceId(),
         fatwaDescription: descriptionController.text,
       ).toMap();
-      await _firebaseColl.addFatwaCollection(data: data).then((value) {
-        Utils.showToast("Added Successfully and we will replay as soon as!");
+
+      await _firebaseColl.fatwaCollection
+          .doc(DateTime.now().millisecondsSinceEpoch.toString())
+          .set(data)
+          .then((onValue) {
+        isLoading = false;
+        context.pop();
+        Utils.showToast(S.of(context).addedSuccessfullyAndWeWillReplayAsSoonAs);
+        _saveAddedFatwaDate();
+        _compareDateNowAndLastFatwaAdded();
+        notifyListeners();
       }).catchError((onError) {
-        Utils.showErrorToast("SomeThing happened try again later!!");
+        context.pop();
+        Utils.showErrorToast(S.of(context).somethingHappenedTryAgainLater);
+        isLoading = false;
+        notifyListeners();
       });
-      isLoading = false;
-      notifyListeners();
+      descriptionController.clear();
     } else {
-      Utils.showErrorToast(S.of(context).fieldRequired);
+      // Utils.showErrorToast(S.of(context).fieldRequired);
     }
   }
 
@@ -64,7 +76,6 @@ class FatwasProvider extends ChangeNotifier {
   }
 
   init() async {
-
     _preferences = await SharedPreferences.getInstance();
     await _compareDateNowAndLastFatwaAdded();
   }
@@ -76,18 +87,21 @@ class FatwasProvider extends ChangeNotifier {
     final String? lastDateString = _getLastFatwaDate();
 
     if (lastDateString != null) {
-      final DateTime dateTimeNow = DateFormat.yMd("ar").add_jm().parse(
-            DateFormat.yMd("ar").add_jm().format(DateTime.now()),
+      final DateTime dateTimeNow = DateFormat.yMEd("ar").add_jm().parse(
+            DateFormat.yMEd("ar").add_jm().format(DateTime.now()),
           );
 
       final DateTime lastDate =
-          DateFormat.yMd("ar").add_jm().parse(lastDateString);
+          DateFormat.yMEd("ar").add_jm().parse(lastDateString).add(
+                const Duration(days: 7),
+              );
 
-      if (dateTimeNow.isAtSameMomentAs(lastDate) ||
-          dateTimeNow.isAfter(lastDate)) {
+      if (lastDate.isBefore(dateTimeNow)) {
+        // Last data time plus 7 days is less than the current date and time.
         _canAddFatwa = true;
         notifyListeners();
       } else {
+        // Last data time plus 7 days is greater than the current date and time.
         _canAddFatwa = false;
         notifyListeners();
       }
@@ -101,9 +115,13 @@ class FatwasProvider extends ChangeNotifier {
   _saveAddedFatwaDate() async {
     await _preferences.setString(
       KeyPreferences.fatwaDateTime,
-      DateFormat.yMd("ar").add_jm().format(
+      DateFormat.yMEd("ar").add_jm().format(
             DateTime.now(),
           ),
     );
+  }
+
+  clearPr()async{
+    await _preferences.clear();
   }
 }

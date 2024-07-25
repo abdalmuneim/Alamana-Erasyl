@@ -23,6 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutUs": MessageLookupByLibrary.simpleMessage("نحن"),
+        "addedSuccessfullyAndWeWillReplayAsSoonAs":
+            MessageLookupByLibrary.simpleMessage(
+                "تمت الإضافة بنجاح وسنرد في أقرب وقت ممكن!"),
         "alamnaAlrasol": MessageLookupByLibrary.simpleMessage("علمنا الرسول"),
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "errorOperation":
@@ -39,13 +42,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لا يوجد فيديوهات"),
         "playLists": MessageLookupByLibrary.simpleMessage("قوائم التشغيل"),
         "request": MessageLookupByLibrary.simpleMessage("طلب"),
+        "requestFatwa": MessageLookupByLibrary.simpleMessage("طلب فتوى"),
         "slidToShow":
             MessageLookupByLibrary.simpleMessage("إسحب لإظهار الفيديوهات"),
+        "somethingHappenedTryAgainLater": MessageLookupByLibrary.simpleMessage(
+            "حدث خطأ ما، حاول مرة أخرى لاحقًا!!"),
         "subscribe": MessageLookupByLibrary.simpleMessage("مشترك"),
         "successOperation":
             MessageLookupByLibrary.simpleMessage("عمليه ناجحة شكرا لك"),
         "supportus": MessageLookupByLibrary.simpleMessage("ادعمنا"),
         "video": MessageLookupByLibrary.simpleMessage("فيديو"),
-        "writeYourReqest": MessageLookupByLibrary.simpleMessage("أكتب مسألتك!")
+        "writeYourRequest": MessageLookupByLibrary.simpleMessage("أكتب مسألتك!")
       };
 }

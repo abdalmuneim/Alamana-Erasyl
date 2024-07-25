@@ -11,7 +11,5 @@ class FirebaseCollec {
           {required String deviceID, required Map<String, dynamic> data}) =>
       _firestore.collection("FCM TOKENS").doc(deviceID).set(data);
   CollectionReference<Map<String, dynamic>> get fatwaCollection =>
-      _firestore.collection("Fatwa");
-   Future<void> addFatwaCollection({required Map<String, dynamic> data}) async=>
-      await fatwaCollection.doc().set(data);
+      _firestore.collection("Fatwas");
 }

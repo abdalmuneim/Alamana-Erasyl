@@ -17,5 +17,9 @@
   "noFatwaFound": "لا يوجد فتاوي حتي الان يمكنك اضافة فتوي وسنرد عليها في اقرب وقت ان شاءالله",
   "request": "طلب",
   "cancel": "إلغاء",
-  "writeYourReqest": "أكتب مسألتك!"
+  "writeYourRequest": "أكتب مسألتك!",
+  "addedSuccessfullyAndWeWillReplayAsSoonAs": "تمت الإضافة بنجاح وسنرد في أقرب وقت ممكن!",
+  "somethingHappenedTryAgainLater": "حدث خطأ ما، حاول مرة أخرى لاحقًا!!",
+  "requestFatwa": "طلب فتوى"
+  
 }

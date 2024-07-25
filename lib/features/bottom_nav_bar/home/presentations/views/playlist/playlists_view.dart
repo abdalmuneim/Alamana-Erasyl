@@ -88,7 +88,10 @@ class _PlaylistsViewState extends State<PlaylistsView> {
                     children: [
                       Text(
                         items.contentDetails!.itemCount!.toString(),
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium
+                            ?.copyWith(color: Colors.white),
                         textAlign: TextAlign.center,
                       ),
                       const Icon(
@@ -103,24 +106,20 @@ class _PlaylistsViewState extends State<PlaylistsView> {
             const SizedBox(width: 10.0),
             Expanded(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     items.snippet?.title ?? "",
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 18.0,
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
                   ),
                   Text(
                     items.snippet?.description ?? "",
-                    maxLines: 3,
+                    maxLines: 5,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      color: Colors.grey,
-                      fontSize: 12.0,
-                    ),
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ],
               ),

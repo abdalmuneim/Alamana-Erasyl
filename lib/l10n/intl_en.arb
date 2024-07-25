@@ -17,6 +17,9 @@
   "noFatwaFound": "There are no fatwas yet. You can add a fatwa, and we will respond to it as soon as possible.",
   "request": "طلب",
   "cancel": "إلغاء",
-  "writeYourReqest": "أكتب مسألتك!",
-  "ValidatorRequestWordNum": "يجب ألا يكون السؤال قل من {word} حرف"
+  "writeYourRequest": "أكتب مسألتك!",
+  "ValidatorRequestWordNum": "يجب ألا يكون السؤال قل من {word} حرف",
+  "addedSuccessfullyAndWeWillReplayAsSoonAs": "Added Successfully and we will replay as soon as!",
+  "somethingHappenedTryAgainLater": "SomeThing happened try again later!!",
+  "requestFatwa": "طلب فتوى"
 }

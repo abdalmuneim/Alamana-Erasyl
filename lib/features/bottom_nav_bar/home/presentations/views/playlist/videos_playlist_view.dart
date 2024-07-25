@@ -10,6 +10,7 @@ import 'package:alamanaelrasyl/features/bottom_nav_bar/home/data/models/video_mo
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/providers/videos_playlist_provider.dart';
 
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/video_view.dart';
+import 'package:sizer/sizer.dart';
 
 class VideosPlaylistView extends StatefulWidget {
   const VideosPlaylistView(
@@ -82,8 +83,8 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
                       widget.itemCount,
                       style: Theme.of(context)
                           .textTheme
-                          .bodySmall!
-                          .copyWith(fontSize: 18),
+                          .titleMedium
+                          ?.copyWith(color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
                     const Icon(
@@ -104,21 +105,16 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
               children: <Widget>[
                 Text(
                   widget.title,
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontSize: 10.sp,
+                      ),
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
                   widget.description,
-                  style: const TextStyle(
-                    color: Colors.grey,
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: Theme.of(context).textTheme.bodySmall,
                   overflow: TextOverflow.ellipsis,
+                  maxLines: 4,
                 ),
                 Text(
                   '${widget.itemCount} ${S.of(context).video}',
@@ -179,12 +175,21 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
             ),
             const SizedBox(width: 10.0),
             Expanded(
-              child: Text(
-                video.title ?? "",
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 18.0,
-                ),
+              child: Column(
+                children: [
+                  Text(
+                    video.title ?? "",
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontSize: 10.sp,
+                    ),
+                    maxLines: 2,
+                  ),
+                  Text(
+                    video.description ?? "",
+                    style: Theme.of(context).textTheme.bodySmall,
+                    maxLines: 5,
+                  )
+                ],
               ),
             ),
           ],
