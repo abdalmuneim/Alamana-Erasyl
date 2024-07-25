@@ -1,12 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirebaseCollec {
-  static final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  static Future<void> fcmTokenCollection(
+  static FirebaseCollec? _instance;
+  // Avoid self instance
+  FirebaseCollec._();
+  static FirebaseCollec get instance => _instance ??= FirebaseCollec._();
+
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  Future<void> fcmTokenCollection(
           {required String deviceID, required Map<String, dynamic> data}) =>
       _firestore.collection("FCM TOKENS").doc(deviceID).set(data);
-  static CollectionReference<Map<String, dynamic>> get fatwaCollection =>
+  CollectionReference<Map<String, dynamic>> get fatwaCollection =>
       _firestore.collection("Fatwa");
-  static dynamic addFatwaCollection({required Map<String, dynamic> data}) =>
-      fatwaCollection.doc().set(data);
+   Future<void> addFatwaCollection({required Map<String, dynamic> data}) async=>
+      await fatwaCollection.doc().set(data);
 }

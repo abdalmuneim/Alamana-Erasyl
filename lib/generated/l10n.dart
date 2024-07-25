@@ -189,6 +189,66 @@ class S {
       args: [],
     );
   }
+
+  /// `الحقل مطلوب`
+  String get fieldRequired {
+    return Intl.message(
+      'الحقل مطلوب',
+      name: 'fieldRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no fatwas yet. You can add a fatwa, and we will respond to it as soon as possible.`
+  String get noFatwaFound {
+    return Intl.message(
+      'There are no fatwas yet. You can add a fatwa, and we will respond to it as soon as possible.',
+      name: 'noFatwaFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `طلب`
+  String get request {
+    return Intl.message(
+      'طلب',
+      name: 'request',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `إلغاء`
+  String get cancel {
+    return Intl.message(
+      'إلغاء',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `أكتب مسألتك!`
+  String get writeYourReqest {
+    return Intl.message(
+      'أكتب مسألتك!',
+      name: 'writeYourReqest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `يجب ألا يكون السؤال قل من {word} حرف`
+  String ValidatorRequestWordNum(Object word) {
+    return Intl.message(
+      'يجب ألا يكون السؤال قل من $word حرف',
+      name: 'ValidatorRequestWordNum',
+      desc: '',
+      args: [word],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,5 +1,11 @@
 class APIKeys<T> {
   static const String youtubeAPI = 'AIzaSyCu-JdkQE4bsfX2HiFKUPHjeUh7j1BeJpk';
+  static const String youtubeAPINEW = 'AIzaSyAn1eJiiX-Auo40r6imG4kvfA0TCC6GphM';
+  static const String oAuthClientIdAndroid =
+      '355042056705-mq479ktv6m6a665h0qf72pn60r7ub8dr.apps.googleusercontent.com';
+  static const String oAuthClientIdWeb =
+      '355042056705-09p20haks2bli55tkasg4gt97r2l4uoa.apps.googleusercontent.com';
+  static const String clientSecrtWeb = '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';
 
   /// sender notification
   static String serverFCMKey =

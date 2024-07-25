@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class AppColors {
   static const Color scaffoldColor = Color(0xffF9FAFF);
@@ -17,5 +18,5 @@ class AppColors {
   static const Color chartLineFirstGradientColor = Color(0xff22B568);
   static const Color chartLineLastGradientColor = Color(0xff00A185);
 
-  static const Color splash = Color(0xff1c19ad);
+  static const Color red = Colors.red;
 }

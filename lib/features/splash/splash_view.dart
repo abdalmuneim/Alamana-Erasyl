@@ -23,13 +23,14 @@ class _SplashViewState extends State<SplashView> {
   }
 
   initFCM() async {
+    // ignore: unused_local_variable
     final notif = NotificationServiceImpl();
-    notif.pushNotification(
+    /*  notif.pushNotification(
       deviceTokens: [await notif.getFCMToken() ?? ""],
       body: "test body 2",
       title: "test title 2",
       data: {"other": "other data 2"},
-    );
+    ); */
   }
 
   @override

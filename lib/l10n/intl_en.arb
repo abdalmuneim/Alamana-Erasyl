@@ -12,5 +12,11 @@
   "aboutUs": "About Us",
   "noDataFound": "لا يوجد بيانات",
   "notHaveVideos": "لا يوجد فيديوهات",
-  "notHavePlayLists": "لا يوجد قوائم تشغيل"
+  "notHavePlayLists": "لا يوجد قوائم تشغيل",
+  "fieldRequired": "الحقل مطلوب",
+  "noFatwaFound": "There are no fatwas yet. You can add a fatwa, and we will respond to it as soon as possible.",
+  "request": "طلب",
+  "cancel": "إلغاء",
+  "writeYourReqest": "أكتب مسألتك!",
+  "ValidatorRequestWordNum": "يجب ألا يكون السؤال قل من {word} حرف"
 }

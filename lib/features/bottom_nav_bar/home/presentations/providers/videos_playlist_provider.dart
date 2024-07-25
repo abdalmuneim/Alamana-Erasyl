@@ -15,8 +15,8 @@ class VideosPlaylistProvider extends ChangeNotifier {
     List<Video> allVideos = _videos!..addAll(moreVideos);
 
     _videos = allVideos;
-    notifyListeners();
     _isLoading = false;
+    notifyListeners();
   }
 
   disposeList() {

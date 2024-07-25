@@ -1,5 +1,4 @@
 import 'package:alamanaelrasyl/core/resources/app_color.dart';
-import 'package:alamanaelrasyl/core/services/newer_version.dart';
 import 'package:alamanaelrasyl/features/about_us/about_view.dart';
 import 'package:alamanaelrasyl/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -26,18 +25,20 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
   late final watchPlaylist = context.watch<PlaylistsProvider>();
   late final readAllVideos = context.read<AllVideosProvider>();
   late final watchAllVideos = context.watch<AllVideosProvider>();
-  late final read = context.watch<TabsProvider>();
+  late final watchTap = context.watch<TabsProvider>();
+  late final readTap = context.read<TabsProvider>();
   @override
   void initState() {
     readAllVideos.initChannel();
     readPlaylist.initPlaylist();
-    NewerVersion.instance.initNewerVersion();
+    readTap.setTabController(this);
     super.initState();
   }
 
   @override
   void dispose() {
-    read.dispose();
+    readTap.dispose();
+    watchTap.dispose();
     readPlaylist.dispose();
     watchPlaylist.dispose();
     readAllVideos.dispose();
@@ -138,64 +139,74 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    TabController controller =
-        TabController(initialIndex: 0, length: 2, vsync: this);
-
     return Directionality(
       textDirection: TextDirection.rtl,
-      child: Scaffold(
-        body: Column(
-          children: [
-            SizedBox(height: SizeConfig.screenHeight / 30),
-            _buildProfileInfo(),
-            Card(
-              elevation: 5,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(.1),
+      child: Consumer(builder: (context, TabsProvider tapPro, child) {
+        return Scaffold(
+          body: Column(
+            children: [
+              SizedBox(height: SizeConfig.screenHeight / 30),
+              _buildProfileInfo(),
+              Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5),
                 ),
-                child: TabBar(
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  indicator: BoxDecoration(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(.1),
                     borderRadius: BorderRadius.circular(5),
-                    color: AppColors.mainApp,
                   ),
-                  controller: controller,
-                  isScrollable: true,
-                  labelPadding: const EdgeInsets.symmetric(horizontal: 30),
-                  tabs: [
-                    Tab(
-                      child: Text(
-                        S.of(context).main,
-                        style: Theme.of(context).textTheme.labelLarge,
-                      ),
+                  child: TabBar(
+                    onTap: (value) => tapPro.setCurrentIndex(value),
+                    indicatorSize: TabBarIndicatorSize.tab,
+                    indicator: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: AppColors.mainApp,
                     ),
-                    Tab(
-                      child: Text(
-                        S.of(context).playLists,
-                        style: Theme.of(context).textTheme.labelLarge,
+                    controller: tapPro.tabController,
+                    isScrollable: true,
+                    labelPadding: const EdgeInsets.symmetric(horizontal: 30),
+                    tabs: [
+                      Tab(
+                        child: Text(
+                          S.of(context).main,
+                          style:
+                              Theme.of(context).textTheme.labelLarge?.copyWith(
+                                    color: tapPro.currentIndex == 0
+                                        ? Colors.white
+                                        : AppColors.mainApp,
+                                  ),
+                        ),
                       ),
-                    ),
+                      Tab(
+                        child: Text(
+                          S.of(context).playLists,
+                          style:
+                              Theme.of(context).textTheme.labelLarge?.copyWith(
+                                    color: tapPro.currentIndex == 1
+                                        ? Colors.white
+                                        : AppColors.mainApp,
+                                  ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                child: TabBarView(
+                  controller: tapPro.tabController,
+                  children: const [
+                    AllVideosView(),
+                    PlaylistsView(),
                   ],
                 ),
               ),
-            ),
-            Expanded(
-              child: TabBarView(
-                controller: controller,
-                children: const [
-                  AllVideosView(),
-                  PlaylistsView(),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
+            ],
+          ),
+        );
+      }),
     );
   }
 }

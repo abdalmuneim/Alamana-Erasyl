@@ -5,3 +5,7 @@ class AppString {
   static String get mahmoud => 'فضيلة الشيخ/ محمود شعبان الجعم';
   static String get infMahmoud => 'خريج كليه الشريعة والقانون سنة 1995';
 }
+
+class KeyPreferences{
+  static String fatwaDateTime = "fatwaDateTime";
+}

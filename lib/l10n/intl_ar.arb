@@ -12,5 +12,10 @@
   "aboutUs": "نحن",
   "noDataFound": "لا يوجد بيانات",
   "notHaveVideos": "لا يوجد فيديوهات",
-  "notHavePlayLists": "لا يوجد قوائم تشغيل"
+  "notHavePlayLists": "لا يوجد قوائم تشغيل",
+  "fieldRequired": "الحقل مطلوب",
+  "noFatwaFound": "لا يوجد فتاوي حتي الان يمكنك اضافة فتوي وسنرد عليها في اقرب وقت ان شاءالله",
+  "request": "طلب",
+  "cancel": "إلغاء",
+  "writeYourReqest": "أكتب مسألتك!"
 }

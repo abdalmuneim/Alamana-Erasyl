@@ -78,7 +78,7 @@ class NotificationServiceImpl implements NotificationService {
     final String? deviceID = await GetDeviceId.instance.getDeviceId();
     if (deviceID != null) {
       log("DEVICE ID: $deviceID");
-      FirebaseCollec.fcmTokenCollection(
+      FirebaseCollec.instance.fcmTokenCollection(
         deviceID: deviceID,
         data: {
           "deviceId": deviceID,

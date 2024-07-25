@@ -1,4 +1,5 @@
 import 'package:alamanaelrasyl/core/resources/app_color.dart';
+import 'package:alamanaelrasyl/core/services/newer_version.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/fatwas/view/fatwas_view.dart';
 import 'package:alamanaelrasyl/generated/l10n.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/bottom_nav_bar_provider.dart';
@@ -18,6 +19,7 @@ class BottomNavBarView extends StatefulWidget {
 class _BottomNavBarViewState extends State<BottomNavBarView> {
   @override
   void didChangeDependencies() {
+    // NewerVersion.instance.initNewerVersion();
     context.read<BottomNavBarProvider>().listenToNetwork();
     super.didChangeDependencies();
   }

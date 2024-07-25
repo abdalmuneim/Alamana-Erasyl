@@ -9,6 +9,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:alamanaelrasyl/core/navigator/routes.dart';
 import 'package:alamanaelrasyl/core/resources/theme_manager.dart';
 import 'package:alamanaelrasyl/providers.dart';
+import 'package:sizer/sizer.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async =>
     debugPrint("Message id: ${message.messageId}");
@@ -31,22 +32,26 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: Providers.providers,
-      child: MaterialApp.router(
-        localizationsDelegates: const [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        locale: const Locale("ar"),
-        supportedLocales: S.delegate.supportedLocales,
-        // title: S.of(context).alamnaAlrasol,
-        debugShowCheckedModeBanner: false,
-        theme: applicationTheme,
-        routerConfig: Routes.router,
-      ),
+    return Sizer(
+      builder: (context,orientation, deviceType) {
+        return MultiProvider(
+          providers: Providers.providers,
+          child: MaterialApp.router(
+            localizationsDelegates: const [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            locale: const Locale("ar"),
+            supportedLocales: S.delegate.supportedLocales,
+            // title: S.of(context).alamnaAlrasol,
+            debugShowCheckedModeBanner: false,
+            theme: applicationTheme,
+            routerConfig: Routes.router,
+          ),
+        );
+      }
     );
   }
 }

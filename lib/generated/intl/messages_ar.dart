@@ -24,22 +24,28 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutUs": MessageLookupByLibrary.simpleMessage("نحن"),
         "alamnaAlrasol": MessageLookupByLibrary.simpleMessage("علمنا الرسول"),
+        "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "errorOperation":
             MessageLookupByLibrary.simpleMessage("فشلت العمليه اعد المحاولة"),
         "fatwas": MessageLookupByLibrary.simpleMessage("فتاوي"),
+        "fieldRequired": MessageLookupByLibrary.simpleMessage("الحقل مطلوب"),
         "main": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "noDataFound": MessageLookupByLibrary.simpleMessage("لا يوجد بيانات"),
+        "noFatwaFound": MessageLookupByLibrary.simpleMessage(
+            "لا يوجد فتاوي حتي الان يمكنك اضافة فتوي وسنرد عليها في اقرب وقت ان شاءالله"),
         "notHavePlayLists":
             MessageLookupByLibrary.simpleMessage("لا يوجد قوائم تشغيل"),
         "notHaveVideos":
             MessageLookupByLibrary.simpleMessage("لا يوجد فيديوهات"),
         "playLists": MessageLookupByLibrary.simpleMessage("قوائم التشغيل"),
+        "request": MessageLookupByLibrary.simpleMessage("طلب"),
         "slidToShow":
             MessageLookupByLibrary.simpleMessage("إسحب لإظهار الفيديوهات"),
         "subscribe": MessageLookupByLibrary.simpleMessage("مشترك"),
         "successOperation":
             MessageLookupByLibrary.simpleMessage("عمليه ناجحة شكرا لك"),
         "supportus": MessageLookupByLibrary.simpleMessage("ادعمنا"),
-        "video": MessageLookupByLibrary.simpleMessage("فيديو")
+        "video": MessageLookupByLibrary.simpleMessage("فيديو"),
+        "writeYourReqest": MessageLookupByLibrary.simpleMessage("أكتب مسألتك!")
       };
 }

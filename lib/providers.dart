@@ -1,4 +1,5 @@
 import 'package:alamanaelrasyl/features/bottom_nav_bar/bottom_nav_bar_provider.dart';
+import 'package:alamanaelrasyl/features/bottom_nav_bar/fatwas/provider/fatwas_provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/providers/all_videos_provider.dart';
@@ -32,5 +33,7 @@ class Providers {
 
     /// Videos Playlist Provider
     ChangeNotifierProvider(create: (_) => VideosPlaylistProvider()),
+    /// Fatwa Provider
+    ChangeNotifierProvider(create: (_) => FatwasProvider()),
   ];
 }

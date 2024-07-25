@@ -197,38 +197,43 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
-      child: Scaffold(
-          body: NotificationListener<ScrollNotification>(
-              onNotification: (ScrollNotification scrollDetails) {
-                if (!watch.isLoading &&
-                    watch.videos?.length != int.parse(widget.itemCount) &&
-                    scrollDetails.metrics.pixels ==
-                        scrollDetails.metrics.maxScrollExtent) {
-                  read.loadMoreVideos(playlistId: widget.id);
-                }
-                return false;
-              },
-              child: ListView.builder(
-                itemCount: 1 + watch.videos!.length,
-                itemBuilder: (BuildContext context, int index) {
-                  if (index == 0) {
-                    return _buildHeadPlaylist();
-                  }
-                  Video video = watch.videos![index - 1];
-                  return Column(
-                    children: [
-                      watch.videos!.isNotEmpty
-                          ? _buildVideo(video, index)
-                          : const LoadingWidget(),
-                      index == watch.videos?.length
-                          ? index != int.parse(widget.itemCount)
-                              ? const CircularProgressIndicator()
+      child: watch.isLoading
+          ? const Center(
+              child: LoadingWidget(),
+            )
+          : Scaffold(
+              body: NotificationListener<ScrollNotification>(
+                  onNotification: (ScrollNotification scrollDetails) {
+                    if (!watch.isLoading &&
+                        watch.videos?.length != int.parse(widget.itemCount) &&
+                        scrollDetails.metrics.pixels ==
+                            scrollDetails.metrics.maxScrollExtent) {
+                      read.loadMoreVideos(playlistId: widget.id);
+                    }
+                    return false;
+                  },
+                  child: ListView.builder(
+                    itemCount: 1 + watch.videos!.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      if (index == 0) {
+                        return _buildHeadPlaylist();
+                      }
+
+                      Video video = watch.videos![index - 1];
+                      return Column(
+                        children: [
+                          watch.videos!.isNotEmpty
+                              ? _buildVideo(video, index)
+                              : const LoadingWidget(),
+                          index == watch.videos?.length
+                              ? index != int.parse(widget.itemCount)
+                                  ? const CircularProgressIndicator()
+                                  : 0.sh
                               : 0.sh
-                          : 0.sh
-                    ],
-                  );
-                },
-              ))),
+                        ],
+                      );
+                    },
+                  ))),
     );
   }
 }
