@@ -1,15 +1,15 @@
+import 'package:alamanaelrasyl/core/navigator/route_string.dart';
+import 'package:alamanaelrasyl/core/utilities/fields.dart';
+import 'package:alamanaelrasyl/features/about_us/about_view.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/bottom_nav_bar_view.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/fatwas/view/fatwas_view.dart';
-import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/all_videos_view.dart';
-import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/video_view.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/data/models/video_model.dart';
+import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/all_videos_view.dart';
+import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/playlist/videos_playlist_view.dart';
+import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/video_view.dart';
+import 'package:alamanaelrasyl/features/splash/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:alamanaelrasyl/core/utilities/fields.dart';
-import 'package:alamanaelrasyl/core/navigator/route_string.dart';
-import 'package:alamanaelrasyl/features/about_us/about_view.dart';
-import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/playlist/videos_playlist_view.dart';
-import 'package:alamanaelrasyl/features/splash/splash_view.dart';
 
 class Routes {
   static final GoRouter router = GoRouter(

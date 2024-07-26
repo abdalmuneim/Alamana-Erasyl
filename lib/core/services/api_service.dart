@@ -1,14 +1,14 @@
 import 'dart:convert';
-import 'dart:developer';
 import 'dart:io';
+
 import 'package:alamanaelrasyl/core/app_const/api_key.dart';
 import 'package:alamanaelrasyl/core/app_const/constant.dart';
-import 'package:http/http.dart' as http;
+import 'package:alamanaelrasyl/core/services/socet.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/data/models/channel_model.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/data/models/error_model.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/data/models/playlist_model.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/data/models/video_model.dart';
-import 'package:alamanaelrasyl/core/services/socet.dart';
+import 'package:http/http.dart' as http;
 
 class APIService {
   APIService._instantiate();
@@ -147,7 +147,7 @@ class APIService {
       };
       // 'pageToken': _nextPageToken,
       // 'maxResults': numLoad ?? "8",
-      log("parameters: ${jsonEncode(parameters)}");
+
       Uri uri = Uri.https(
         AppConstant.basicApi,
         '/youtube/v3/playlistItems',
@@ -159,7 +159,6 @@ class APIService {
 
       // Get Playlist Videos
       var response = await http.get(uri, headers: headers);
-      log("response: ${jsonEncode(jsonDecode(response.body))}");
 
       if (response.statusCode == 200) {
         var data = json.decode(response.body);

@@ -1,19 +1,13 @@
-import 'dart:convert';
-
-import 'package:alamanaelrasyl/core/navigator/route_string.dart';
-import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/widgets/card_video.dart';
-import 'package:alamanaelrasyl/generated/l10n.dart';
-import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
-// import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-import 'package:provider/provider.dart';
-import 'package:alamanaelrasyl/core/utilities/extensions.dart';
 import 'package:alamanaelrasyl/core/resources/size_config.dart';
+import 'package:alamanaelrasyl/core/utilities/extensions.dart';
 import 'package:alamanaelrasyl/core/widgets/loading_widget.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/data/models/video_model.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/providers/videos_playlist_provider.dart';
-
-import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/video_view.dart';
+import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/widgets/card_video.dart';
+import 'package:alamanaelrasyl/generated/l10n.dart';
+import 'package:flutter/material.dart';
+// import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 class VideosPlaylistView extends StatefulWidget {

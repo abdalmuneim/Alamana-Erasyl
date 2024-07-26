@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:alamanaelrasyl/core/utilities/utilities.dart';
-import 'package:http_console/http_console.dart';
+import 'package:http/http.dart' as http;
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -68,8 +68,7 @@ class WebSiteLaunch {
   /// for get app id for app on apple store
   static Future<String> _getAppStoreId(String bundleId) async {
     final url = 'https://itunes.apple.com/lookup?bundleId=$bundleId';
-    final response = await LoggingHttpClient(packageName: "alamanaelrasyl")
-        .get(Uri.parse(url));
+    final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
       final json = jsonDecode(response.body);

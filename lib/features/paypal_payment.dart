@@ -52,7 +52,7 @@ class PaypalPaymentState extends State<PaypalPayment> {
           executeUrl = res["executeUrl"]!;
         });
       } catch (e) {
-        print('exception: $e');
+        debugPrint('exception: $e');
         final snackBar = SnackBar(
           content: Text(e.toString()),
           duration: const Duration(seconds: 10),
@@ -139,7 +139,7 @@ class PaypalPaymentState extends State<PaypalPayment> {
 
   @override
   Widget build(BuildContext context) {
-    print(checkoutUrl);
+    debugPrint(checkoutUrl);
 
     if (checkoutUrl != null) {
       return Scaffold(

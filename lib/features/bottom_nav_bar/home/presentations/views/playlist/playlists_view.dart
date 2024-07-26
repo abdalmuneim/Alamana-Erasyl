@@ -1,14 +1,14 @@
-import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/playlist/videos_playlist_view.dart';
-import 'package:alamanaelrasyl/generated/l10n.dart';
-import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
-import 'package:provider/provider.dart';
 import 'package:alamanaelrasyl/core/navigator/navigator_utils.dart';
 import 'package:alamanaelrasyl/core/navigator/route_string.dart';
 import 'package:alamanaelrasyl/core/resources/size_config.dart';
 import 'package:alamanaelrasyl/core/widgets/loading_widget.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/data/models/playlist_model.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/providers/playlists_provider.dart';
+import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/playlist/videos_playlist_view.dart';
+import 'package:alamanaelrasyl/generated/l10n.dart';
+import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+import 'package:provider/provider.dart';
 
 class PlaylistsView extends StatefulWidget {
   const PlaylistsView({Key? key}) : super(key: key);

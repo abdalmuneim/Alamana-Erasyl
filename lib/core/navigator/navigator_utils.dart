@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:alamanaelrasyl/core/utilities/fields.dart';
 import 'package:alamanaelrasyl/core/navigator/route_string.dart';
 import 'package:alamanaelrasyl/core/navigator/routes.dart';
+import 'package:alamanaelrasyl/core/utilities/fields.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class NavigationService {
   static BuildContext get context =>

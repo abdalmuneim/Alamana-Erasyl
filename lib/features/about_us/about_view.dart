@@ -1,9 +1,9 @@
-import 'package:alamanaelrasyl/generated/l10n.dart';
-import 'package:flutter/material.dart';
-import 'package:alamanaelrasyl/core/utilities/extensions.dart';
 import 'package:alamanaelrasyl/core/resources/app_string.dart';
 import 'package:alamanaelrasyl/core/resources/assets_manager.dart';
+import 'package:alamanaelrasyl/core/utilities/extensions.dart';
 import 'package:alamanaelrasyl/features/about_us/widgets/card_info.dart';
+import 'package:alamanaelrasyl/generated/l10n.dart';
+import 'package:flutter/material.dart';
 
 class AboutUsView extends StatelessWidget {
   const AboutUsView({Key? key}) : super(key: key);

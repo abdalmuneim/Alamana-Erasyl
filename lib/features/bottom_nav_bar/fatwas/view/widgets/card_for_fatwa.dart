@@ -89,7 +89,7 @@ class _CardForFatwaState extends State<CardForFatwa> {
               children: <Widget>[
                 IconButton(
                   onPressed: () {
-                    print(isVisibaleReply);
+                    debugPrint(isVisibaleReply);
                     setState(() {
                       isVisibaleReply = !isVisibaleReply;
                     });

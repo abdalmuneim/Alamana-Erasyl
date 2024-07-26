@@ -1,6 +1,5 @@
 import 'package:alamanaelrasyl/core/navigator/navigator_utils.dart';
 import 'package:alamanaelrasyl/core/resources/app_string.dart';
-import 'package:alamanaelrasyl/core/resources/assets_manager.dart';
 import 'package:alamanaelrasyl/core/services/firebase_collec.dart';
 import 'package:alamanaelrasyl/core/services/get_device_id.dart';
 import 'package:alamanaelrasyl/core/utilities/utilities.dart';

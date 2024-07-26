@@ -1,13 +1,11 @@
 import 'package:alamanaelrasyl/core/resources/app_color.dart';
-import 'package:alamanaelrasyl/core/services/newer_version.dart';
-import 'package:alamanaelrasyl/features/bottom_nav_bar/fatwas/view/fatwas_view.dart';
-import 'package:alamanaelrasyl/generated/l10n.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/bottom_nav_bar_provider.dart';
+import 'package:alamanaelrasyl/features/bottom_nav_bar/fatwas/view/fatwas_view.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/tabs_view.dart';
+import 'package:alamanaelrasyl/generated/l10n.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
-// import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:provider/provider.dart';
 
 class BottomNavBarView extends StatefulWidget {

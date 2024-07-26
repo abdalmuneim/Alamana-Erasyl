@@ -1,6 +1,4 @@
 import 'package:alamanaelrasyl/core/app_const/constant.dart';
-import 'package:alamanaelrasyl/core/resources/assets_manager.dart';
-import 'package:alamanaelrasyl/core/utilities/extensions.dart';
 import 'package:alamanaelrasyl/core/widgets/loading_widget.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/fatwas/data/models/fatwa_model.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/fatwas/provider/fatwas_provider.dart';
@@ -8,7 +6,6 @@ import 'package:alamanaelrasyl/features/bottom_nav_bar/fatwas/view/widgets/card_
 import 'package:alamanaelrasyl/generated/l10n.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';

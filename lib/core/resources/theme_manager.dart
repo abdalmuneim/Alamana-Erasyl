@@ -1,7 +1,7 @@
+import 'package:alamanaelrasyl/core/resources/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:alamanaelrasyl/core/resources/app_color.dart';
 import 'package:sizer/sizer.dart';
 
 ThemeData get applicationTheme => ThemeData(
@@ -35,7 +35,7 @@ ThemeData get applicationTheme => ThemeData(
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
           textStyle:
-              WidgetStateProperty.resolveWith((Set<MaterialState> states) {
+              WidgetStateProperty.resolveWith((Set<WidgetState > states) {
             return GoogleFonts.cairo(
               fontSize: 10.sp, // Set your desired font size
               fontWeight: FontWeight.normal, // Set your desired font weight
