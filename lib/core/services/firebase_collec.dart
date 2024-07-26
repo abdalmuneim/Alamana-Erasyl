@@ -12,4 +12,8 @@ class FirebaseCollec {
       _firestore.collection("FCM TOKENS").doc(deviceID).set(data);
   CollectionReference<Map<String, dynamic>> get fatwaCollection =>
       _firestore.collection("Fatwas");
+
+  // todo: create myFatwa feature
+  // todo: create subscription functionality
+
 }
