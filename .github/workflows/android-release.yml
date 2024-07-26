@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-#      - forUser
+      - forUser
   pull_request:
     types:
       - closed
