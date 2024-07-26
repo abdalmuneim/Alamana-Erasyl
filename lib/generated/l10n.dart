@@ -279,6 +279,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Replay Done`
+  String get replayDone {
+    return Intl.message(
+      'Replay Done',
+      name: 'replayDone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shared {count}`
+  String shared(Object count) {
+    return Intl.message(
+      'Shared $count',
+      name: 'shared',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `إسحب لأعلي تحميل`
+  String get scrollToUpForLoad {
+    return Intl.message(
+      'إسحب لأعلي تحميل',
+      name: 'scrollToUpForLoad',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

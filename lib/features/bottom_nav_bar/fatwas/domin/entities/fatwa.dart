@@ -9,10 +9,12 @@ class Fatwa extends Equatable {
   final String? reply;
   final String? createAt;
   final String? userImg;
-  final String? replyImg;
+  final String? repliedImg;
+  final String? repliedName;
   final String? replyAt;
   const Fatwa({
     this.id,
+    this.repliedName,
     this.reactCount,
     this.deviceID,
     this.fatwaDescription,
@@ -20,7 +22,7 @@ class Fatwa extends Equatable {
     this.createAt,
     this.userImg,
     this.replyAt,
-    this.replyImg,
+    this.repliedImg,
     this.shareCount,
   });
 
@@ -34,7 +36,7 @@ class Fatwa extends Equatable {
         reply,
         createAt,
         userImg,
-        replyImg,
+        repliedImg,
         replyAt,
       ];
 }

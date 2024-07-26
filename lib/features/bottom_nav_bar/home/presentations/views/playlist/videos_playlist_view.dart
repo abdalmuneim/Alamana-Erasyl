@@ -1,7 +1,11 @@
+import 'dart:convert';
+
 import 'package:alamanaelrasyl/core/navigator/route_string.dart';
+import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/widgets/card_video.dart';
 import 'package:alamanaelrasyl/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+// import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:provider/provider.dart';
 import 'package:alamanaelrasyl/core/utilities/extensions.dart';
 import 'package:alamanaelrasyl/core/resources/size_config.dart';
@@ -37,7 +41,10 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
 
   @override
   void initState() {
-    read.loadMoreVideos(playlistId: widget.id);
+    read.loadMoreVideos(
+      playlistId: widget.id,
+      numLoad: int.parse(widget.itemCount) >= 8 ? "8" : widget.itemCount,
+    );
     super.initState();
   }
 
@@ -133,71 +140,6 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
     );
   }
 
-  _buildVideo(Video video, int index) {
-    return GestureDetector(
-      onTap: () {
-        PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
-          context,
-          settings: RouteSettings(
-            name: RouteStrings.videoViewer,
-          ),
-          screen: VideoView(video: video),
-          withNavBar: true,
-          pageTransitionAnimation: PageTransitionAnimation.cupertino,
-        );
-        /*   Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (_) => VideoView(video: video),
-          ),
-        ); */
-      },
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-        padding: const EdgeInsets.all(10.0),
-        height: 140.0,
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black12,
-              offset: Offset(0, 1),
-              blurRadius: 6.0,
-            ),
-          ],
-        ),
-        child: Row(
-          children: <Widget>[
-            Text('$index. '),
-            Image(
-              width: 150.0,
-              image: NetworkImage(video.thumbnailUrl ?? ""),
-            ),
-            const SizedBox(width: 10.0),
-            Expanded(
-              child: Column(
-                children: [
-                  Text(
-                    video.title ?? "",
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: 10.sp,
-                    ),
-                    maxLines: 2,
-                  ),
-                  Text(
-                    video.description ?? "",
-                    style: Theme.of(context).textTheme.bodySmall,
-                    maxLines: 5,
-                  )
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -210,7 +152,7 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
               body: NotificationListener<ScrollNotification>(
                   onNotification: (ScrollNotification scrollDetails) {
                     if (!watch.isLoading &&
-                        watch.videos?.length != int.parse(widget.itemCount) &&
+                        watch.videos.length != int.parse(widget.itemCount) &&
                         scrollDetails.metrics.pixels ==
                             scrollDetails.metrics.maxScrollExtent) {
                       read.loadMoreVideos(playlistId: widget.id);
@@ -218,19 +160,32 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
                     return false;
                   },
                   child: ListView.builder(
-                    itemCount: 1 + watch.videos!.length,
+                    itemCount: 1 + watch.videos.length,
                     itemBuilder: (BuildContext context, int index) {
                       if (index == 0) {
                         return _buildHeadPlaylist();
                       }
 
-                      Video video = watch.videos![index - 1];
+                      Video video = watch.videos[index - 1];
+                      if (watch.videos.isEmpty) {
+                        return Center(
+                          child: Text(
+                            S.of(context).scrollToUpForLoad,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium
+                                ?.copyWith(
+                                  color: Colors.black,
+                                ),
+                          ),
+                        );
+                      }
                       return Column(
                         children: [
-                          watch.videos!.isNotEmpty
-                              ? _buildVideo(video, index)
+                          watch.videos.isNotEmpty
+                              ? CardVideo(video: video, index: index)
                               : const LoadingWidget(),
-                          index == watch.videos?.length
+                          index == watch.videos.length
                               ? index != int.parse(widget.itemCount)
                                   ? const CircularProgressIndicator()
                                   : 0.sh

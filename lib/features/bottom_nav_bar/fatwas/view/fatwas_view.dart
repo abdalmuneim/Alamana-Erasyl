@@ -3,8 +3,8 @@ import 'package:alamanaelrasyl/core/resources/assets_manager.dart';
 import 'package:alamanaelrasyl/core/utilities/extensions.dart';
 import 'package:alamanaelrasyl/core/widgets/loading_widget.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/fatwas/data/models/fatwa_model.dart';
-import 'package:alamanaelrasyl/features/bottom_nav_bar/fatwas/domin/entities/fatwa.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/fatwas/provider/fatwas_provider.dart';
+import 'package:alamanaelrasyl/features/bottom_nav_bar/fatwas/view/widgets/card_for_fatwa.dart';
 import 'package:alamanaelrasyl/generated/l10n.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -64,85 +64,7 @@ class _FatwasViewState extends State<FatwasView> {
                 itemCount: fatwas.length,
                 itemBuilder: (context, index) {
                   final fatwa = fatwas[index];
-                  return Card(
-                    elevation: 3,
-                    margin: const EdgeInsets.symmetric(
-                        horizontal: 8.0, vertical: 8.0),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 8.0, vertical: 8.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          /// fatwa content
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                  padding: const EdgeInsets.all(10),
-                                  margin: const EdgeInsets.only(left: 10),
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border: Border.all(),
-                                  ),
-                                  child: SvgPicture.asset(Assets.userOctagon)),
-                              1.w.sw,
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    fatwa.deviceID?.substring(0, 7) ?? "",
-                                    style:
-                                        Theme.of(context).textTheme.titleMedium,
-                                  ),
-                                  .4.h.sh,
-                                  Text(
-                                    fatwa.createAt ?? "",
-                                    style:
-                                        Theme.of(context).textTheme.bodySmall,
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                          2.h.sh,
-
-                          Text(fatwa.fatwaDescription ?? ""),
-                          2.h.sh,
-
-                          /// data replay and share
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: <Widget>[
-                              8.w.sw,
-                              Visibility(
-                                visible: (fatwa.reply != null),
-                                child: Text("Replay"),
-                              ),
-                              const Spacer(),
-                              Visibility(
-                                visible: (fatwa.shareCount != null),
-                                child: Text("Shareed"),
-                              ),
-                              8.w.sw,
-                            ],
-                          ),
-
-                          /// icons
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              Icon(Icons.comment_outlined),
-                              Icon(Icons.share),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                  );
+                  return CardForFatwa(fatwa: fatwa);
                 },
               );
             }

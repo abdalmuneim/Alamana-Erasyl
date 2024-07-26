@@ -12,8 +12,9 @@ class FatwaModel extends Fatwa {
     super.reply,
     super.createAt,
     super.userImg,
-    super.replyImg,
+    super.repliedImg,
     super.replyAt,
+    super.repliedName,
   });
 
   Map<String, dynamic> toMap() {
@@ -24,6 +25,9 @@ class FatwaModel extends Fatwa {
     }
     if (shareCount != null) {
       result.addAll({'shareCount': id});
+    }
+    if (repliedName != null) {
+      result.addAll({'repliedName': id});
     }
     if (reactCount != null) {
       result.addAll({'reactCount': reactCount});
@@ -43,8 +47,8 @@ class FatwaModel extends Fatwa {
     if (userImg != null) {
       result.addAll({'userImg': userImg});
     }
-    if (replyImg != null) {
-      result.addAll({'replyImg': replyImg});
+    if (repliedImg != null) {
+      result.addAll({'repliedImg': repliedImg});
     }
     if (replyAt != null) {
       result.addAll({'replyAt': replyAt});
@@ -59,11 +63,12 @@ class FatwaModel extends Fatwa {
       shareCount: map['shareCount']?.toInt(),
       reactCount: map['reactCount']?.toInt(),
       deviceID: map['deviceID'],
+      repliedName: map['repliedName'],
       fatwaDescription: map['fatwaDescription'],
       reply: map['reply'],
       createAt: map['createAt'],
       userImg: map['userImg'],
-      replyImg: map['replyImg'],
+      repliedImg: map['repliedImg'],
       replyAt: map['replyAt'],
     );
   }
@@ -75,7 +80,7 @@ class FatwaModel extends Fatwa {
 
   @override
   String toString() {
-    return 'FatwaModel(id: $id, reactCount: $reactCount, shareCount: $shareCount, deviceID: $deviceID, fatwaDescription: $fatwaDescription, reply: $reply, createAt: $createAt, userImg: $userImg, replyImg: $replyImg, replyAt: $replyAt)';
+    return 'FatwaModel(id: $id, reactCount: $reactCount, shareCount: $shareCount, deviceID: $deviceID, fatwaDescription: $fatwaDescription, reply: $reply, createAt: $createAt, userImg: $userImg, replyImg: $repliedImg, replyAt: $replyAt)';
   }
 
   @override
@@ -85,13 +90,14 @@ class FatwaModel extends Fatwa {
     return other is FatwaModel &&
         other.id == id &&
         other.reactCount == reactCount &&
+        other.repliedName == repliedName &&
         other.deviceID == deviceID &&
         other.shareCount == shareCount &&
         other.fatwaDescription == fatwaDescription &&
         other.reply == reply &&
         other.createAt == createAt &&
         other.userImg == userImg &&
-        other.replyImg == replyImg &&
+        other.repliedImg == repliedImg &&
         other.replyAt == replyAt;
   }
 
@@ -104,7 +110,7 @@ class FatwaModel extends Fatwa {
         reply.hashCode ^
         createAt.hashCode ^
         userImg.hashCode ^
-        replyImg.hashCode ^
+        repliedImg.hashCode ^
         replyAt.hashCode;
   }
 }

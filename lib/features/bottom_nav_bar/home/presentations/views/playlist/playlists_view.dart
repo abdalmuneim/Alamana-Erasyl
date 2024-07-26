@@ -1,7 +1,7 @@
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/playlist/videos_playlist_view.dart';
 import 'package:alamanaelrasyl/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:alamanaelrasyl/core/navigator/navigator_utils.dart';
 import 'package:alamanaelrasyl/core/navigator/route_string.dart';
@@ -40,17 +40,6 @@ class _PlaylistsViewState extends State<PlaylistsView> {
           withNavBar: true,
           pageTransitionAnimation: PageTransitionAnimation.cupertino,
         );
-
-        /*  return context.pushNamed(
-          RouteStrings.videosPlaylist,
-          queryParams: <String, String>{
-            Fields.id: items.id ?? "",
-            Fields.title: items.snippet?.title ?? "",
-            Fields.description: items.snippet?.description ?? "",
-            Fields.url: items.snippet?.thumbnails?.thumbnailsDefault?.url ?? "",
-            Fields.itemCount: items.contentDetails?.itemCount.toString() ?? "",
-          },
-        ); */
       },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),

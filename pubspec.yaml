@@ -27,15 +27,16 @@ dependencies:
 
   url_launcher: ^6.3.0
 #  new_version_plus: ^0.0.11
-  device_info_plus: ^8.2.2
-  package_info_plus: ^4.0.0
+  device_info_plus: ^10.1.0
+  package_info_plus: ^8.0.0
+  share_plus: ^9.0.0
+
   sizer: ^2.0.15
   shimmer: ^3.0.0
-  lottie: ^3.0.0
+  lottie: ^3.1.2
 
   youtube_player_flutter: ^9.0.1
-  flutter_braintree: ^3.0.0
-  persistent_bottom_nav_bar: ^5.0.2
+  persistent_bottom_nav_bar: ^6.2.1
   google_fonts: ^6.2.1
   flutter_svg: ^2.0.10+1
 
@@ -43,7 +44,7 @@ dependencies:
   firebase_core: ^3.2.0
   firebase_messaging: ^15.0.3
   flutter_local_notifications: ^17.2.1+2
-  googleapis_auth: ^1.4.1
+  googleapis_auth: ^1.6.0
 
   equatable: ^2.0.5
   http_console:
@@ -51,12 +52,16 @@ dependencies:
       url: https://github.com/abdalmuneim/http_console.git
       ref: main
 
+#  payment
+  flutter_braintree: ^4.0.0
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
 
-  change_app_package_name: ^1.1.0
+  change_app_package_name: ^1.3.0
   flutter_launcher_icons: ^0.13.1
 flutter_icons:
   image_path_android: "assets/images/logo.png"

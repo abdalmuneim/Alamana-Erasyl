@@ -6,7 +6,8 @@ import 'package:alamanaelrasyl/features/bottom_nav_bar/bottom_nav_bar_provider.d
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/tabs_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+// import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:provider/provider.dart';
 
 class BottomNavBarView extends StatefulWidget {
@@ -49,28 +50,28 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
           inactiveColorPrimary: AppColors.notActive,
         ),
       ],
-      confineInSafeArea: true,
+      confineToSafeArea: true,
       backgroundColor: CupertinoColors.activeGreen, // Default is Colors.white.
       handleAndroidBackButtonPress: true, // Default is true.
       resizeToAvoidBottomInset:
           false, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
       stateManagement: true, // Default is true.
-      hideNavigationBarWhenKeyboardShows:
-          true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
-
-      popAllScreensOnTapOfSelectedTab: true,
-      popActionScreens: PopActionScreensType.all,
-      itemAnimationProperties: const ItemAnimationProperties(
+      // hideNavigationBarWhenKeyboardShows:
+      //     true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
+      //
+      // popAllScreensOnTapOfSelectedTab: true,
+      // popActionScreens: PopActionScreensType.all,
+      // itemAnimationProperties: const ItemAnimationProperties(
         // Navigation Bar's items animation properties.
-        duration: Duration(milliseconds: 300),
-        curve: Curves.ease,
-      ),
-      screenTransitionAnimation: const ScreenTransitionAnimation(
+        // duration: Duration(milliseconds: 300),
+        // curve: Curves.ease,
+      // ),
+      // screenTransitionAnimation: const ScreenTransitionAnimation(
         // Screen transition animation on change of selected tab.
-        animateTabTransition: true,
-        curve: Curves.ease,
-        duration: Duration(milliseconds: 300),
-      ),
+        // animateTabTransition: true,
+        // curve: Curves.ease,
+        // duration: Duration(milliseconds: 300),
+      // ),
       navBarStyle:
           NavBarStyle.style9, // Choose the nav bar style with this property.
     );

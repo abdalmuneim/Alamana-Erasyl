@@ -20,11 +20,13 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(word) => "يجب ألا يكون السؤال قل من ${word} حرف";
+  static String m1(word) => "يجب ألا يكون السؤال قل من ${word} حرف";
+
+  static String m0(count) => "Shared ${count}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "ValidatorRequestWordNum": m0,
+        "ValidatorRequestWordNum": m1,
         "aboutUs": MessageLookupByLibrary.simpleMessage("About Us"),
         "addedSuccessfullyAndWeWillReplayAsSoonAs":
             MessageLookupByLibrary.simpleMessage(
@@ -44,8 +46,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "notHaveVideos":
             MessageLookupByLibrary.simpleMessage("لا يوجد فيديوهات"),
         "playLists": MessageLookupByLibrary.simpleMessage("Play Lists"),
+        "replayDone": MessageLookupByLibrary.simpleMessage("Replay Done"),
         "request": MessageLookupByLibrary.simpleMessage("طلب"),
         "requestFatwa": MessageLookupByLibrary.simpleMessage("طلب فتوى"),
+        "scrollToUpForLoad":
+            MessageLookupByLibrary.simpleMessage("إسحب لأعلي تحميل"),
+        "shared": m0,
         "slidToShow":
             MessageLookupByLibrary.simpleMessage("Slid To Show Videos"),
         "somethingHappenedTryAgainLater": MessageLookupByLibrary.simpleMessage(

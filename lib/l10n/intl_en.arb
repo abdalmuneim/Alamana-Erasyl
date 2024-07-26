@@ -21,5 +21,8 @@
   "ValidatorRequestWordNum": "يجب ألا يكون السؤال قل من {word} حرف",
   "addedSuccessfullyAndWeWillReplayAsSoonAs": "Added Successfully and we will replay as soon as!",
   "somethingHappenedTryAgainLater": "SomeThing happened try again later!!",
-  "requestFatwa": "طلب فتوى"
+  "requestFatwa": "طلب فتوى",
+  "replayDone": "Replay Done",
+  "shared": "Shared {count}",
+  "scrollToUpForLoad": "إسحب لأعلي تحميل"
 }

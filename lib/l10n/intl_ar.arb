@@ -20,6 +20,8 @@
   "writeYourRequest": "أكتب مسألتك!",
   "addedSuccessfullyAndWeWillReplayAsSoonAs": "تمت الإضافة بنجاح وسنرد في أقرب وقت ممكن!",
   "somethingHappenedTryAgainLater": "حدث خطأ ما، حاول مرة أخرى لاحقًا!!",
-  "requestFatwa": "طلب فتوى"
-  
+  "requestFatwa": "طلب فتوى",
+  "replayDone": "تم رد",
+  "shared": "مشاركة {count}",
+  "scrollToUpForLoad": "إسحب لأعلي لتحميل الفيديوهات"
 }

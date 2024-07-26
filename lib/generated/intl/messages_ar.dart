@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
+  static String m0(count) => "مشاركة ${count}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutUs": MessageLookupByLibrary.simpleMessage("نحن"),
@@ -41,8 +43,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "notHaveVideos":
             MessageLookupByLibrary.simpleMessage("لا يوجد فيديوهات"),
         "playLists": MessageLookupByLibrary.simpleMessage("قوائم التشغيل"),
+        "replayDone": MessageLookupByLibrary.simpleMessage("تم رد"),
         "request": MessageLookupByLibrary.simpleMessage("طلب"),
         "requestFatwa": MessageLookupByLibrary.simpleMessage("طلب فتوى"),
+        "scrollToUpForLoad": MessageLookupByLibrary.simpleMessage(
+            "إسحب لأعلي لتحميل الفيديوهات"),
+        "shared": m0,
         "slidToShow":
             MessageLookupByLibrary.simpleMessage("إسحب لإظهار الفيديوهات"),
         "somethingHappenedTryAgainLater": MessageLookupByLibrary.simpleMessage(

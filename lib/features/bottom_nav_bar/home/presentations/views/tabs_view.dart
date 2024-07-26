@@ -2,7 +2,8 @@ import 'package:alamanaelrasyl/core/resources/app_color.dart';
 import 'package:alamanaelrasyl/features/about_us/about_view.dart';
 import 'package:alamanaelrasyl/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+// import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:provider/provider.dart';
 import 'package:alamanaelrasyl/core/navigator/navigator_utils.dart';
 import 'package:alamanaelrasyl/core/navigator/route_string.dart';
@@ -158,6 +159,7 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: TabBar(
+                    physics: const NeverScrollableScrollPhysics(),
                     onTap: (value) => tapPro.setCurrentIndex(value),
                     indicatorSize: TabBarIndicatorSize.tab,
                     indicator: BoxDecoration(
@@ -196,6 +198,7 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
               ),
               Expanded(
                 child: TabBarView(
+                  physics: const NeverScrollableScrollPhysics(),
                   controller: tapPro.tabController,
                   children: const [
                     AllVideosView(),

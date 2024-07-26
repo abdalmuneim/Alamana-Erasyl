@@ -121,7 +121,7 @@ class FatwasProvider extends ChangeNotifier {
     );
   }
 
-  clearPr()async{
+  clearPr() async {
     await _preferences.clear();
   }
 }

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'dart:io';
 import 'package:alamanaelrasyl/core/app_const/api_key.dart';
 import 'package:alamanaelrasyl/core/app_const/constant.dart';
@@ -137,15 +138,16 @@ class APIService {
 
   /// fetchVideosFromPlaylist
   Future<List<Video>> fetchVideosForPlaylist(
-      {required String playlistId}) async {
+      {required String playlistId, String? numLoad = "8"}) async {
     try {
-      Map<String, String> parameters = {
+      Map<String, dynamic> parameters = {
         'part': 'snippet',
         'playlistId': playlistId,
-        'maxResults': '8',
-        'pageToken': _nextPageToken,
         'key': APIKeys.youtubeAPI,
       };
+      // 'pageToken': _nextPageToken,
+      // 'maxResults': numLoad ?? "8",
+      log("parameters: ${jsonEncode(parameters)}");
       Uri uri = Uri.https(
         AppConstant.basicApi,
         '/youtube/v3/playlistItems',
@@ -157,6 +159,7 @@ class APIService {
 
       // Get Playlist Videos
       var response = await http.get(uri, headers: headers);
+      log("response: ${jsonEncode(jsonDecode(response.body))}");
 
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
@@ -180,6 +183,120 @@ class APIService {
           .timeOutMethod(() => fetchVideosForPlaylist(
                 playlistId: playlistId,
               ));
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<String> subscribeToChannel() async {
+    String channelId = AppConstant.channelId;
+    String url = '/youtube/v3/subscriptions';
+
+    Map<String, dynamic> parameters = {
+      'part': 'snippet',
+      'channelId': channelId,
+      'kind': 'youtube#channel',
+      'key': APIKeys.youtubeAPI,
+    };
+    try {
+      final response = await http.post(
+        Uri.http(
+          AppConstant.basicApi,
+          url,
+          parameters,
+        ),
+      );
+      if (response.statusCode == 200) {
+        return ('Subscribed to channel: $channelId');
+      } else {
+        throw ('Failed to subscribe to channel: ${response.body}');
+      }
+    } on SocketException {
+      return ServerService<String>().timeOutMethod(() => subscribeToChannel());
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<String> likeVideo({required String videoId}) async {
+    String url = '/youtube/v3/videos/rate';
+    Map<String, dynamic> parameters = {
+      "id": videoId,
+      "rating": "like",
+      'key': APIKeys.youtubeAPI,
+    };
+    try {
+      final response = await http.post(
+        Uri.http(
+          AppConstant.basicApi,
+          url,
+          parameters,
+        ),
+      );
+      if (response.statusCode == 204) {
+        return ('Disliked video: $videoId');
+      } else {
+        return ('Failed to dislike video: ${response.body}');
+      }
+    } on SocketException {
+      return ServerService<String>()
+          .timeOutMethod(() => dislikeVideo(videoId: videoId));
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<String> dislikeVideo({required String videoId}) async {
+    String url = '/youtube/v3/videos/rate';
+    Map<String, dynamic> parameters = {
+      "id": videoId,
+      "rating": "dislike",
+      'key': APIKeys.youtubeAPI,
+    };
+    try {
+      final response = await http.post(
+        Uri.http(
+          AppConstant.basicApi,
+          url,
+          parameters,
+        ),
+      );
+      if (response.statusCode == 204) {
+        return ('Disliked video: $videoId');
+      } else {
+        return ('Failed to dislike video: ${response.body}');
+      }
+    } on SocketException {
+      return ServerService<String>()
+          .timeOutMethod(() => dislikeVideo(videoId: videoId));
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<String> removeRating({required String videoId}) async {
+    String url = 'youtube/v3/videos/rate';
+    Map<String, dynamic> parameters = {
+      "id": videoId,
+      "rating": "none",
+      'key': APIKeys.youtubeAPI,
+    };
+    try {
+      final response = await http.post(
+        Uri.http(
+          AppConstant.basicApi,
+          url,
+          parameters,
+        ),
+      );
+      if (response.statusCode == 204) {
+        return ('Removed rating from video: $videoId');
+      } else {
+        throw ('Failed to remove rating from video: ${response.body}');
+      }
+    } on SocketException {
+      return ServerService<String>()
+          .timeOutMethod(() => removeRating(videoId: videoId));
     } catch (e) {
       rethrow;
     }
