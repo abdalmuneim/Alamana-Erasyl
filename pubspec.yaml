@@ -47,10 +47,6 @@ dependencies:
   googleapis_auth: ^1.6.0
 
   equatable: ^2.0.5
-  http_console:
-    git:
-      url: https://github.com/abdalmuneim/http_console.git
-      ref: main
 
 #  payment
   flutter_braintree: ^4.0.0
