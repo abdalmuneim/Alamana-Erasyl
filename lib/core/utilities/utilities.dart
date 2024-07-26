@@ -1,13 +1,13 @@
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:lottie/lottie.dart';
-import 'package:alamanaelrasyl/core/utilities/fields.dart';
 import 'package:alamanaelrasyl/core/handler/failure.dart';
 import 'package:alamanaelrasyl/core/navigator/navigator_utils.dart';
 import 'package:alamanaelrasyl/core/resources/assets_manager.dart';
+import 'package:alamanaelrasyl/core/utilities/fields.dart';
 import 'package:alamanaelrasyl/core/widgets/loading_widget.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shimmer/shimmer.dart';
 
 class Utils {
@@ -67,8 +67,8 @@ class Utils {
     showDialog(
       context: _context,
       builder: (ctx) {
-        return WillPopScope(
-          onWillPop: () async => false,
+        return PopScope(
+          canPop: false,
           child: AlertDialog(
             content: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -99,12 +99,12 @@ class Utils {
       dialog: () => showDialog(
         context: _context,
         builder: (ctx) {
-          return WillPopScope(
-            onWillPop: () async {
+          return PopScope(
+            canPop: false,
+            onPopInvoked: (value) {
               if (showClose) {
                 hideCustomDialog(name: name);
               }
-              return false;
             },
             child: AlertDialog(
               backgroundColor: Colors.transparent,
@@ -191,8 +191,8 @@ class Utils {
             context: _context,
             barrierDismissible: false,
             builder: (ctx) {
-              return WillPopScope(
-                onWillPop: () async => false,
+              return PopScope(
+                canPop: false,
                 child: AlertDialog(
                   backgroundColor: Colors.transparent,
                   elevation: 0,

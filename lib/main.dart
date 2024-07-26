@@ -1,14 +1,14 @@
+import 'package:alamanaelrasyl/core/navigator/routes.dart';
+import 'package:alamanaelrasyl/core/resources/theme_manager.dart';
 import 'package:alamanaelrasyl/firebase_options.dart';
 import 'package:alamanaelrasyl/generated/l10n.dart';
+import 'package:alamanaelrasyl/providers.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:alamanaelrasyl/core/navigator/routes.dart';
-import 'package:alamanaelrasyl/core/resources/theme_manager.dart';
-import 'package:alamanaelrasyl/providers.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async =>

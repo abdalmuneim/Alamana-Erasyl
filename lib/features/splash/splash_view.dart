@@ -1,11 +1,11 @@
-import 'package:alamanaelrasyl/core/services/notification_service.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:alamanaelrasyl/core/app_const/constant.dart';
-import 'package:alamanaelrasyl/core/utilities/extensions.dart';
 import 'package:alamanaelrasyl/core/resources/assets_manager.dart';
 import 'package:alamanaelrasyl/core/resources/size_config.dart';
+import 'package:alamanaelrasyl/core/services/notification_service.dart';
+import 'package:alamanaelrasyl/core/utilities/extensions.dart';
 import 'package:alamanaelrasyl/features/splash/splash_provider.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});

@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:alamanaelrasyl/features/bottom_nav_bar/home/data/models/video_model.dart';
 import 'package:alamanaelrasyl/core/services/api_service.dart';
+import 'package:alamanaelrasyl/features/bottom_nav_bar/home/data/models/video_model.dart';
+import 'package:flutter/material.dart';
 
 class VideosPlaylistProvider extends ChangeNotifier {
   List<Video> _videos = [];

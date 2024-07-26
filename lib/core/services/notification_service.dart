@@ -3,16 +3,17 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:alamanaelrasyl/core/app_const/constant.dart';
+import 'package:alamanaelrasyl/core/navigator/navigator_utils.dart';
+import 'package:alamanaelrasyl/core/navigator/route_string.dart';
 import 'package:alamanaelrasyl/core/services/firebase_collec.dart';
 import 'package:alamanaelrasyl/core/services/get_device_id.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:go_router/go_router.dart';
 import 'package:googleapis_auth/auth_io.dart';
 import 'package:http/http.dart' as http;
-import 'package:alamanaelrasyl/core/navigator/navigator_utils.dart';
-import 'package:alamanaelrasyl/core/navigator/route_string.dart';
 
 abstract class NotificationService {
   requestPermission();
@@ -56,12 +57,12 @@ class NotificationServiceImpl implements NotificationService {
     }
 
     if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-      print("User granted permission");
+      debugPrint("User granted permission");
     } else if (settings.authorizationStatus ==
         AuthorizationStatus.provisional) {
-      print("User granted provisional permission");
+      debugPrint("User granted provisional permission");
     } else {
-      print("User declined or has not accepted permission");
+      debugPrint("User declined or has not accepted permission");
     }
   }
 
@@ -126,8 +127,8 @@ class NotificationServiceImpl implements NotificationService {
 
     /// firebase massaging
     FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
-      print("--------------- On Messaging: ------------");
-      print(
+      debugPrint("--------------- On Messaging: ------------");
+      debugPrint(
           "title: ${message.notification!.title} \nbody: ${message.notification?.body} \ndata: ${jsonEncode(message.data)}");
 
       BigTextStyleInformation bigTextStyleInformation = BigTextStyleInformation(
@@ -220,10 +221,10 @@ class NotificationServiceImpl implements NotificationService {
     );
 
     if (response.statusCode == 200) {
-      print('Notification sent to token: $token');
+      debugPrint('Notification sent to token: $token');
     } else {
-      print('Failed to send notification to token: $token');
-      print('Response: ${response.body}');
+      debugPrint('Failed to send notification to token: $token');
+      debugPrint('Response: ${response.body}');
     }
   }
 
@@ -239,7 +240,7 @@ class NotificationServiceImpl implements NotificationService {
     final client = await _loadFileClientData();
     final accountCredentials = ServiceAccountCredentials.fromJson({
       "type": client.type,
-      "project_id": client.project_id,
+      "project_id": client.projectId,
       "private_key_id": client.private_key_id,
       "private_key": client.private_key,
       "client_email": client.client_email,
@@ -256,49 +257,49 @@ class NotificationServiceImpl implements NotificationService {
 
 class ClientModel {
   final String type;
-  final String project_id;
-  final String private_key_id;
-  final String private_key;
-  final String client_email;
-  final String client_id;
-  final String auth_uri;
-  final String token_uri;
-  final String auth_provider_x509_cert_url;
-  final String client_x509_cert_url;
-  final String universe_domain;
+  final String projectId;
+  final String privateKeyId;
+  final String privateKey;
+  final String clientEmail;
+  final String clientId;
+  final String authUri;
+  final String tokenUri;
+  final String authProviderX509CertUrl;
+  final String clientX509CertUrl;
+  final String universeDomain;
   ClientModel({
     required this.type,
-    required this.project_id,
-    required this.private_key_id,
-    required this.private_key,
-    required this.client_email,
-    required this.client_id,
-    required this.auth_uri,
-    required this.token_uri,
-    required this.auth_provider_x509_cert_url,
-    required this.client_x509_cert_url,
-    required this.universe_domain,
+    required this.projectId,
+    required this.privateKeyId,
+    required this.privateKey,
+    required this.clientEmail,
+    required this.clientId,
+    required this.authUri,
+    required this.tokenUri,
+    required this.authProviderX509CertUrl,
+    required this.clientX509CertUrl,
+    required this.universeDomain,
   });
 
   factory ClientModel.fromMap(Map<String, dynamic> map) {
     return ClientModel(
       type: map['type'] ?? '',
-      project_id: map['project_id'] ?? '',
-      private_key_id: map['private_key_id'] ?? '',
-      private_key: map['private_key'] ?? '',
-      client_email: map['client_email'] ?? '',
-      client_id: map['client_id'] ?? '',
-      auth_uri: map['auth_uri'] ?? '',
-      token_uri: map['token_uri'] ?? '',
-      auth_provider_x509_cert_url: map['auth_provider_x509_cert_url'] ?? '',
-      client_x509_cert_url: map['client_x509_cert_url'] ?? '',
-      universe_domain: map['universe_domain'] ?? '',
+      projectId: map['project_id'] ?? '',
+      privateKeyId: map['private_key_id'] ?? '',
+      privateKey: map['private_key'] ?? '',
+      clientEmail: map['client_email'] ?? '',
+      clientId: map['client_id'] ?? '',
+      authUri: map['auth_uri'] ?? '',
+      tokenUri: map['token_uri'] ?? '',
+      authProviderX509CertUrl: map['auth_provider_x509_cert_url'] ?? '',
+      clientX509CertUrl: map['client_x509_cert_url'] ?? '',
+      universeDomain: map['universe_domain'] ?? '',
     );
   }
 
   @override
   String toString() {
-    return 'ClientModel(type: $type, project_id: $project_id, private_key_id: $private_key_id, private_key: $private_key, client_email: $client_email, client_id: $client_id, auth_uri: $auth_uri, token_uri: $token_uri, auth_provider_x509_cert_url: $auth_provider_x509_cert_url, client_x509_cert_url: $client_x509_cert_url, universe_domain: $universe_domain)';
+    return 'ClientModel(type: $type, project_id: $projectId, private_key_id: $privateKeyId, private_key: $privateKey, client_email: $clientEmail, client_id: $clientId, auth_uri: $authUri, token_uri: $tokenUri, auth_provider_x509_cert_url: $authProviderX509CertUrl, client_x509_cert_url: $clientX509CertUrl, universe_domain: $universeDomain)';
   }
 
   @override
@@ -307,30 +308,30 @@ class ClientModel {
 
     return other is ClientModel &&
         other.type == type &&
-        other.project_id == project_id &&
-        other.private_key_id == private_key_id &&
-        other.private_key == private_key &&
-        other.client_email == client_email &&
-        other.client_id == client_id &&
-        other.auth_uri == auth_uri &&
-        other.token_uri == token_uri &&
-        other.auth_provider_x509_cert_url == auth_provider_x509_cert_url &&
-        other.client_x509_cert_url == client_x509_cert_url &&
-        other.universe_domain == universe_domain;
+        other.projectId == projectId &&
+        other.privateKeyId == privateKeyId &&
+        other.privateKey == privateKey &&
+        other.clientEmail == clientEmail &&
+        other.clientId == clientId &&
+        other.authUri == authUri &&
+        other.tokenUri == tokenUri &&
+        other.authProviderX509CertUrl == authProviderX509CertUrl &&
+        other.clientX509CertUrl == clientX509CertUrl &&
+        other.universeDomain == universeDomain;
   }
 
   @override
   int get hashCode {
     return type.hashCode ^
-        project_id.hashCode ^
-        private_key_id.hashCode ^
-        private_key.hashCode ^
-        client_email.hashCode ^
-        client_id.hashCode ^
-        auth_uri.hashCode ^
-        token_uri.hashCode ^
-        auth_provider_x509_cert_url.hashCode ^
-        client_x509_cert_url.hashCode ^
-        universe_domain.hashCode;
+        projectId.hashCode ^
+        privateKeyId.hashCode ^
+        privateKey.hashCode ^
+        clientEmail.hashCode ^
+        clientId.hashCode ^
+        authUri.hashCode ^
+        tokenUri.hashCode ^
+        authProviderX509CertUrl.hashCode ^
+        clientX509CertUrl.hashCode ^
+        universeDomain.hashCode;
   }
 }

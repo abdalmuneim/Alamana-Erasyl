@@ -1,10 +1,10 @@
 // 🎯 Dart imports:
 
+import 'package:alamanaelrasyl/core/resources/app_color.dart';
+import 'package:alamanaelrasyl/core/resources/assets_manager.dart';
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:alamanaelrasyl/core/resources/app_color.dart';
-import 'package:alamanaelrasyl/core/resources/assets_manager.dart';
 
 class LoadingWidget extends StatelessWidget {
   const LoadingWidget({Key? key, this.description}) : super(key: key);

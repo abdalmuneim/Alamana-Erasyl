@@ -1,18 +1,18 @@
-import 'package:alamanaelrasyl/core/resources/app_color.dart';
-import 'package:alamanaelrasyl/features/about_us/about_view.dart';
-import 'package:alamanaelrasyl/generated/l10n.dart';
-import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
-// import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-import 'package:provider/provider.dart';
 import 'package:alamanaelrasyl/core/navigator/navigator_utils.dart';
 import 'package:alamanaelrasyl/core/navigator/route_string.dart';
+import 'package:alamanaelrasyl/core/resources/app_color.dart';
 import 'package:alamanaelrasyl/core/resources/size_config.dart';
+import 'package:alamanaelrasyl/features/about_us/about_view.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/providers/all_videos_provider.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/providers/playlists_provider.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/providers/tabs_provider.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/all_videos_view.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/playlist/playlists_view.dart';
+import 'package:alamanaelrasyl/generated/l10n.dart';
+import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+// import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:provider/provider.dart';
 
 class TabsView extends StatefulWidget {
   const TabsView({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/data/models/video_model.dart';
+import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class VideoView extends StatefulWidget {
