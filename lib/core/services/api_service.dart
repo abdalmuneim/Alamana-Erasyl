@@ -138,20 +138,25 @@ class APIService {
 
   /// fetchVideosFromPlaylist
   Future<List<Video>> fetchVideosForPlaylist(
-      {required String playlistId, String? numLoad = "8"}) async {
+      {required String playlistId, required int numLoad}) async {
     try {
-      Map<String, dynamic> parameters = {
+      Map<String, dynamic> parametersMini = {
         'part': 'snippet',
         'playlistId': playlistId,
         'key': APIKeys.youtubeAPI,
       };
-      // 'pageToken': _nextPageToken,
-      // 'maxResults': numLoad ?? "8",
+      Map<String, dynamic> parametersMax = {
+        'part': 'snippet',
+        'pageToken': _nextPageToken,
+        'maxResults': "8",
+        'playlistId': playlistId,
+        'key': APIKeys.youtubeAPI,
+      };
 
       Uri uri = Uri.https(
         AppConstant.basicApi,
         '/youtube/v3/playlistItems',
-        parameters,
+        numLoad >= 8 ? parametersMax : parametersMini,
       );
       Map<String, String> headers = {
         HttpHeaders.contentTypeHeader: 'application/json',
@@ -181,6 +186,7 @@ class APIService {
       return ServerService<List<Video>>()
           .timeOutMethod(() => fetchVideosForPlaylist(
                 playlistId: playlistId,
+                numLoad: numLoad,
               ));
     } catch (e) {
       rethrow;
