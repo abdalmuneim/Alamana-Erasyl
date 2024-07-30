@@ -8,7 +8,7 @@ class VideosPlaylistProvider extends ChangeNotifier {
   bool _isLoading = false;
   bool get isLoading => _isLoading;
 
-  Future<void> loadMoreVideos({required String playlistId,String? numLoad}) async {
+  Future<void> loadMoreVideos({required String playlistId,required int numLoad}) async {
     _isLoading = true;
     List<Video> moreVideos = await APIService.instance
         .fetchVideosForPlaylist(playlistId: playlistId,numLoad: numLoad);

@@ -37,7 +37,7 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
   void initState() {
     read.loadMoreVideos(
       playlistId: widget.id,
-      numLoad: int.parse(widget.itemCount) >= 8 ? "8" : widget.itemCount,
+      numLoad: int.parse(widget.itemCount),
     );
     super.initState();
   }
@@ -149,7 +149,9 @@ class _VideosPlaylistViewState extends State<VideosPlaylistView> {
                         watch.videos.length != int.parse(widget.itemCount) &&
                         scrollDetails.metrics.pixels ==
                             scrollDetails.metrics.maxScrollExtent) {
-                      read.loadMoreVideos(playlistId: widget.id);
+                      read.loadMoreVideos(
+                          playlistId: widget.id,
+                          numLoad: int.parse(widget.itemCount));
                     }
                     return false;
                   },

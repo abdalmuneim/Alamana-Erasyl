@@ -19,7 +19,7 @@ on:
 jobs:
   build:
     # to only merge if there is a merge action
-    if: github.event.commits.message=='release' || github.event.pull_request.merged == true
+    # if: github.event.commits.message=='release' || github.event.pull_request.merged == true
     # Contains the type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -33,7 +33,7 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           distribution: "zulu"
-          java-version: "12.x"
+          java-version: "17.x"
           # providing Gradle to be cached with respect to the Java SDK
           cache: "gradle"
 
