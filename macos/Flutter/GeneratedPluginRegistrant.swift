@@ -13,7 +13,7 @@ import flutter_inappwebview_macos
 import flutter_local_notifications
 import package_info_plus
 import path_provider_foundation
-import share_plus
+import share_plus_macos
 import shared_preferences_foundation
 import sqflite
 import url_launcher_macos
