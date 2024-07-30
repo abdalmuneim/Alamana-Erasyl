@@ -16,16 +16,16 @@ class NetworkInfoImpl implements NetworkInfo {
   final StreamController<bool> _streamController = StreamController<bool>();
   late final StreamSubscription<bool> _streamSubscription =
       _streamController.stream.asBroadcastStream().listen((event) => event);
-  late StreamSubscription<InternetStatus> _internetConnectionStream;
+  late StreamSubscription<InternetConnectionStatus> _internetConnectionStream;
   @override
   void initializeNetworkStream() {
     _internetConnectionStream =
-        InternetConnection().onStatusChange.listen((status) {
+        InternetConnectionCheckerPlus().onStatusChange.listen((status) {
       switch (status) {
-        case InternetStatus.connected:
+        case InternetConnectionStatus.connected:
           _streamController.sink.add(true);
           break;
-        case InternetStatus.disconnected:
+        case InternetConnectionStatus.disconnected:
           _streamController.sink.add(false);
           break;
       }
