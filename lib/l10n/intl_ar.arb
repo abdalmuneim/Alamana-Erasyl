@@ -23,5 +23,6 @@
   "requestFatwa": "طلب فتوى",
   "replayDone": "تم رد",
   "shared": "مشاركة {count}",
-  "scrollToUpForLoad": "إسحب لأعلي لتحميل الفيديوهات"
+  "scrollToUpForLoad": "إسحب لأعلي لتحميل الفيديوهات",
+  "somThingHappened": " {e}!حدث خطاء ما اعد المحاولة"
 }

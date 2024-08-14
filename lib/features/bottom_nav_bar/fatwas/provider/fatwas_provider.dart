@@ -60,6 +60,10 @@ class FatwasProvider extends ChangeNotifier {
     }
   }
 
+  shareFatwa(FatwaModel fa)async{
+
+  }
+
   Stream<QuerySnapshot<Map<String, dynamic>>> getFatwas() {
     final Stream<QuerySnapshot<Map<String, dynamic>>> d =
         _firebaseColl.fatwaCollection.snapshots();

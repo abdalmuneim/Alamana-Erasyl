@@ -20,13 +20,15 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m1(word) => "يجب ألا يكون السؤال قل من ${word} حرف";
+  static String m2(word) => "يجب ألا يكون السؤال قل من ${word} حرف";
 
   static String m0(count) => "Shared ${count}";
 
+  static String m1(e) => "Some thing happened try again! ${e}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "ValidatorRequestWordNum": m1,
+        "ValidatorRequestWordNum": m2,
         "aboutUs": MessageLookupByLibrary.simpleMessage("About Us"),
         "addedSuccessfullyAndWeWillReplayAsSoonAs":
             MessageLookupByLibrary.simpleMessage(
@@ -54,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "shared": m0,
         "slidToShow":
             MessageLookupByLibrary.simpleMessage("Slid To Show Videos"),
+        "somThingHappened": m1,
         "somethingHappenedTryAgainLater": MessageLookupByLibrary.simpleMessage(
             "SomeThing happened try again later!!"),
         "subscribe": MessageLookupByLibrary.simpleMessage("Subscribe"),

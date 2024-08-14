@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(count) => "مشاركة ${count}";
 
+  static String m1(e) => " ${e}!حدث خطاء ما اعد المحاولة";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutUs": MessageLookupByLibrary.simpleMessage("نحن"),
@@ -51,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "shared": m0,
         "slidToShow":
             MessageLookupByLibrary.simpleMessage("إسحب لإظهار الفيديوهات"),
+        "somThingHappened": m1,
         "somethingHappenedTryAgainLater": MessageLookupByLibrary.simpleMessage(
             "حدث خطأ ما، حاول مرة أخرى لاحقًا!!"),
         "subscribe": MessageLookupByLibrary.simpleMessage("مشترك"),

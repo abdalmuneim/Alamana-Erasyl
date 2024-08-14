@@ -309,6 +309,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Some thing happened try again! {e}`
+  String somThingHappened(Object e) {
+    return Intl.message(
+      'Some thing happened try again! $e',
+      name: 'somThingHappened',
+      desc: '',
+      args: [e],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

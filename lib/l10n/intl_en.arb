@@ -24,5 +24,7 @@
   "requestFatwa": "طلب فتوى",
   "replayDone": "Replay Done",
   "shared": "Shared {count}",
-  "scrollToUpForLoad": "إسحب لأعلي تحميل"
+  "scrollToUpForLoad": "إسحب لأعلي تحميل",
+  "somThingHappened": "Some thing happened try again! {e}"
+
 }
