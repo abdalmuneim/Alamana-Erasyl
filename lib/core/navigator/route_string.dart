@@ -6,4 +6,7 @@ class RouteStrings {
   static String videoViewer = 'videoViewer';
   static String fatwas = 'fatwas';
   static String aboutUs = '/about';
+  static String profile = '/profile';
+  static String tazkiyahAlNafs = '/tazkiyahAlNafs';
+  static String login = '/login';
 }

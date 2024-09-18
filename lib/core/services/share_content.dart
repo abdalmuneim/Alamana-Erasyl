@@ -27,11 +27,11 @@ class ShareWidget {
     onchange(true);
 
     await _urlToFile(
-        imageUrl: data['img'] ??
-            data['header_image_path'] ??
-            data['image_path'] ??
-            data["image"] ??
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEkA9gblpiJEJfpBwChxch8UVTI4VkPKpkSA&s")
+            imageUrl: data['img'] ??
+                data['header_image_path'] ??
+                data['image_path'] ??
+                data["image"] ??
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEkA9gblpiJEJfpBwChxch8UVTI4VkPKpkSA&s")
         .then((File file) async {
       final isDone = await Share.shareXFiles(
         [XFile(file.path)],
@@ -52,7 +52,7 @@ class ShareWidget {
       );
       onResult?.call(isDone);
     }).catchError((e) {
-      Utils.showErrorToast( S.of(context).somThingHappened(e.toString()));
+      Utils.showErrorToast(S.of(context).somThingHappened(e.toString()));
     });
 
     onchange(false);

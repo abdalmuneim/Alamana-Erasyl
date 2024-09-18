@@ -1,12 +1,15 @@
 import 'package:alamanaelrasyl/core/navigator/route_string.dart';
 import 'package:alamanaelrasyl/core/utilities/fields.dart';
 import 'package:alamanaelrasyl/features/about_us/about_view.dart';
+import 'package:alamanaelrasyl/features/auth/login/presentation/views/login_views.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/bottom_nav_bar_view.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/fatwas/view/fatwas_view.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/data/models/video_model.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/all_videos_view.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/playlist/videos_playlist_view.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/video_view.dart';
+import 'package:alamanaelrasyl/features/bottom_nav_bar/profile/presentation/views/profile_view.dart';
+import 'package:alamanaelrasyl/features/bottom_nav_bar/tazkiyah_al-nafs/presentation/views/tazkiyah_al_nafs_view.dart';
 import 'package:alamanaelrasyl/features/splash/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -83,7 +86,31 @@ class Routes {
         path: RouteStrings.aboutUs,
         builder: (BuildContext context, GoRouterState state) =>
             const AboutUsView(),
-      )
+      ),
+
+      /// profile
+      GoRoute(
+        name: RouteStrings.profile,
+        path: RouteStrings.profile,
+        builder: (BuildContext context, GoRouterState state) =>
+            const ProfileView(),
+      ),
+
+      /// tazkiyah al nafs
+      GoRoute(
+        name: RouteStrings.tazkiyahAlNafs,
+        path: RouteStrings.tazkiyahAlNafs,
+        builder: (BuildContext context, GoRouterState state) =>
+            const TazkiyahAlNafsView(),
+      ),
+
+      /// login
+      GoRoute(
+        name: RouteStrings.login,
+        path: RouteStrings.login,
+        builder: (BuildContext context, GoRouterState state) =>
+            const LoginViews(),
+      ),
     ],
   );
 }

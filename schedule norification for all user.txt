@@ -1,0 +1,74 @@
+To schedule notifications for **Cairo time** (EET – Eastern European Time), you'll need to set the `timeZone` to `"Africa/Cairo"`. Here's how you can update the code to send notifications at **6:00 AM** and **5:00 PM Cairo time**:
+
+### Updated Firebase Function Code:
+
+```javascript
+const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+
+admin.initializeApp();
+
+// Function to send notification at 6:00 AM Cairo Time
+exports.sendMorningNotification = functions.pubsub.schedule('0 6 * * *')
+  .timeZone('Africa/Cairo') // Set time zone to Cairo
+  .onRun((context) => {
+    const message = {
+      notification: {
+        title: 'Good Morning!',
+        body: 'This is your daily notification at 6:00 AM!',
+      },
+      topic: 'all_users',
+    };
+
+    return admin.messaging().send(message)
+      .then((response) => {
+        console.log('Successfully sent morning message:', response);
+        return null;
+      })
+      .catch((error) => {
+        console.log('Error sending morning message:', error);
+        return null;
+      });
+});
+
+// Function to send notification at 5:00 PM Cairo Time
+exports.sendEveningNotification = functions.pubsub.schedule('0 17 * * *')
+  .timeZone('Africa/Cairo') // Set time zone to Cairo
+  .onRun((context) => {
+    const message = {
+      notification: {
+        title: 'Good Evening!',
+        body: 'This is your daily notification at 5:00 PM!',
+      },
+      topic: 'all_users',
+    };
+
+    return admin.messaging().send(message)
+      .then((response) => {
+        console.log('Successfully sent evening message:', response);
+        return null;
+      })
+      .catch((error) => {
+        console.log('Error sending evening message:', error);
+        return null;
+      });
+});
+```
+
+### Key Changes:
+- **`timeZone('Africa/Cairo')`**: This sets the time zone for Cairo.
+- **Schedule at 6:00 AM and 5:00 PM Cairo time** using the respective cron expressions (`'0 6 * * *'` for 6:00 AM and `'0 17 * * *'` for 5:00 PM).
+
+### 1. **Deploy the Updated Functions**
+
+After making the changes, deploy the functions with:
+
+```bash
+firebase deploy --only functions
+```
+
+### 2. **Verify Time Zone**
+
+Make sure to confirm that your Firebase Functions and Cloud Scheduler are set up to operate correctly in the **Cairo (Africa/Cairo) time zone**. 
+
+With this configuration, notifications will now be sent at **6:00 AM** and **5:00 PM Cairo time** daily.
