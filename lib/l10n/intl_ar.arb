@@ -24,5 +24,22 @@
   "replayDone": "تم رد",
   "shared": "مشاركة {count}",
   "scrollToUpForLoad": "إسحب لأعلي لتحميل الفيديوهات",
-  "somThingHappened": " {e}!حدث خطاء ما اعد المحاولة"
+  "somThingHappened": " {e}!حدث خطاء ما اعد المحاولة",
+  "tazkiyah": "تزكية",
+  "account": "الملف الشخصي",
+  "myProfile": "الملف الشخصي",
+  "needLoginFirst": "تحتاج تسجيل الدخول أولا",
+  "login": "تسجيل الدخول",
+  "signup": "انشاء حساب",
+  "email": "البريد الالكتروني",
+  "phone": "رقم الهاتف",
+  "address": "العنوان",
+  "image": "صورة",
+  "password": "كلمة السر",
+  "confirm": "تاكيد",
+  "save": "حفظ",
+  "logout": "تسجيل الخروج",
+  "yes": "نعم",
+  "no": "لا",
+  "createGrop": "إنشاء مجموعة"
 }

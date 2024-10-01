@@ -2,6 +2,7 @@ import 'package:alamanaelrasyl/core/navigator/navigator_utils.dart';
 import 'package:alamanaelrasyl/core/navigator/route_string.dart';
 import 'package:alamanaelrasyl/core/resources/app_color.dart';
 import 'package:alamanaelrasyl/core/resources/size_config.dart';
+import 'package:alamanaelrasyl/core/services/get_device_id.dart';
 import 'package:alamanaelrasyl/features/about_us/about_view.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/providers/all_videos_provider.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/providers/playlists_provider.dart';
@@ -140,6 +141,8 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    GetDeviceId.instance.getDeviceId().then((value) => print("value: $value"));
+
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Consumer(builder: (context, TabsProvider tapPro, child) {

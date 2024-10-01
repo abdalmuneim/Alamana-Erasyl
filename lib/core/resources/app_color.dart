@@ -9,7 +9,7 @@ class AppColors {
   static const Color lightRed = Color(0xffDE3131);
 
   static const Color secondaryButton = Color(0xFFE3652B);
-  static const Color notActive = Color(0xFFD9DDE1);
+  static const Color notActive = Color(0xFFB9B9B9);
   static const Color divider = Color.fromRGBO(0, 0, 0, 0.10196078431372549);
   static const Color myChat = Color(0xffC1EED9);
   static const Color otherChat = Color(0xffECEDF2);

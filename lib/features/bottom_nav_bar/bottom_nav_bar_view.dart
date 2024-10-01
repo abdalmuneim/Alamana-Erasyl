@@ -2,6 +2,8 @@ import 'package:alamanaelrasyl/core/resources/app_color.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/bottom_nav_bar_provider.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/fatwas/view/fatwas_view.dart';
 import 'package:alamanaelrasyl/features/bottom_nav_bar/home/presentations/views/tabs_view.dart';
+import 'package:alamanaelrasyl/features/bottom_nav_bar/profile/presentation/views/profile_view.dart';
+import 'package:alamanaelrasyl/features/bottom_nav_bar/tazkiyah_al-nafs/presentation/views/tazkiyah_al_nafs_view.dart';
 import 'package:alamanaelrasyl/generated/l10n.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -31,10 +33,18 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
       context,
       controller: watch.controller,
       screens: const [
+        ProfileView(),
         TabsView(),
         FatwasView(),
+        TazkiyahAlNafsView(),
       ],
       items: [
+        PersistentBottomNavBarItem(
+          icon: const Icon(Icons.person_3_outlined),
+          title: S.of(context).account,
+          activeColorPrimary: CupertinoColors.white,
+          inactiveColorPrimary: AppColors.notActive,
+        ),
         PersistentBottomNavBarItem(
           icon: const Icon(Icons.video_collection_outlined),
           title: (S.of(context).main),
@@ -44,6 +54,12 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
         PersistentBottomNavBarItem(
           icon: const Icon(CupertinoIcons.question_diamond),
           title: (S.of(context).fatwas),
+          activeColorPrimary: CupertinoColors.white,
+          inactiveColorPrimary: AppColors.notActive,
+        ),
+        PersistentBottomNavBarItem(
+          icon: const Icon(CupertinoIcons.person_2_square_stack),
+          title: S.of(context).tazkiyah,
           activeColorPrimary: CupertinoColors.white,
           inactiveColorPrimary: AppColors.notActive,
         ),
@@ -60,18 +76,18 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
       // popAllScreensOnTapOfSelectedTab: true,
       // popActionScreens: PopActionScreensType.all,
       // itemAnimationProperties: const ItemAnimationProperties(
-        // Navigation Bar's items animation properties.
-        // duration: Duration(milliseconds: 300),
-        // curve: Curves.ease,
+      // Navigation Bar's items animation properties.
+      // duration: Duration(milliseconds: 300),
+      // curve: Curves.ease,
       // ),
       // screenTransitionAnimation: const ScreenTransitionAnimation(
-        // Screen transition animation on change of selected tab.
-        // animateTabTransition: true,
-        // curve: Curves.ease,
-        // duration: Duration(milliseconds: 300),
+      // Screen transition animation on change of selected tab.
+      // animateTabTransition: true,
+      // curve: Curves.ease,
+      // duration: Duration(milliseconds: 300),
       // ),
       navBarStyle:
-          NavBarStyle.style9, // Choose the nav bar style with this property.
+          NavBarStyle.style14, // Choose the nav bar style with this property.
     );
   }
 }

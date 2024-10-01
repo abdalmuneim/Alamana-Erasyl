@@ -1,3 +1,25 @@
+// import 'package:alamanaelrasyl/features/auth/domin/entities/user.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class TazkiyahAlNafsProvider extends ChangeNotifier {}
+class TazkiyahAlNafsProvider extends ChangeNotifier {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  bool loggedin = false;
+
+  User? _user;
+  User? get user => _user;
+
+  _isLoggedIn() async {
+    _user = _auth.currentUser;
+    if (_user != null) {
+      loggedin = true;
+      notifyListeners();
+    }
+  }
+
+  init() {
+    _isLoggedIn();
+  }
+}

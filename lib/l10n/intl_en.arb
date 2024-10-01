@@ -25,6 +25,22 @@
   "replayDone": "Replay Done",
   "shared": "Shared {count}",
   "scrollToUpForLoad": "إسحب لأعلي تحميل",
-  "somThingHappened": "Some thing happened try again! {e}"
-
+  "somThingHappened": "Some thing happened try again! {e}",
+  "tazkiyah": "تزكية",
+  "account": "الملف الشخصي",
+  "myProfile": "الملف الشخصي",
+  "needLoginFirst": "تحتاج تسجيل الدخول أولا",
+  "login": "تسجيل الدخول",
+  "signup": "انشاء حساب",
+  "email": "البريد الالكتروني",
+  "phone": "رقم الهاتف",
+  "address": "العنوان",
+  "image": "صورة",
+  "password": "كلمة السر",
+  "confirm": "تاكيد",
+  "save": "حفظ",
+  "logout": "تسجيل الخروج",
+  "yes": "نعم",
+  "no": "لا",
+  "createGrop": "إنشاء مجموعة"
 }

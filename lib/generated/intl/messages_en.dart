@@ -30,16 +30,28 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "ValidatorRequestWordNum": m2,
         "aboutUs": MessageLookupByLibrary.simpleMessage("About Us"),
+        "account": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "addedSuccessfullyAndWeWillReplayAsSoonAs":
             MessageLookupByLibrary.simpleMessage(
                 "Added Successfully and we will replay as soon as!"),
+        "address": MessageLookupByLibrary.simpleMessage("العنوان"),
         "alamnaAlrasol": MessageLookupByLibrary.simpleMessage("Alamna Alrasol"),
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+        "confirm": MessageLookupByLibrary.simpleMessage("تاكيد"),
+        "createGrop": MessageLookupByLibrary.simpleMessage("إنشاء مجموعة"),
+        "email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
         "errorOperation":
             MessageLookupByLibrary.simpleMessage("Operation failed try again"),
         "fatwas": MessageLookupByLibrary.simpleMessage("Fatwas"),
         "fieldRequired": MessageLookupByLibrary.simpleMessage("الحقل مطلوب"),
+        "image": MessageLookupByLibrary.simpleMessage("صورة"),
+        "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "main": MessageLookupByLibrary.simpleMessage("Home"),
+        "myProfile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "needLoginFirst":
+            MessageLookupByLibrary.simpleMessage("تحتاج تسجيل الدخول أولا"),
+        "no": MessageLookupByLibrary.simpleMessage("لا"),
         "noDataFound": MessageLookupByLibrary.simpleMessage("لا يوجد بيانات"),
         "noFatwaFound": MessageLookupByLibrary.simpleMessage(
             "There are no fatwas yet. You can add a fatwa, and we will respond to it as soon as possible."),
@@ -47,13 +59,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لا يوجد قوائم تشغيل"),
         "notHaveVideos":
             MessageLookupByLibrary.simpleMessage("لا يوجد فيديوهات"),
+        "password": MessageLookupByLibrary.simpleMessage("كلمة السر"),
+        "phone": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
         "playLists": MessageLookupByLibrary.simpleMessage("Play Lists"),
         "replayDone": MessageLookupByLibrary.simpleMessage("Replay Done"),
         "request": MessageLookupByLibrary.simpleMessage("طلب"),
         "requestFatwa": MessageLookupByLibrary.simpleMessage("طلب فتوى"),
+        "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "scrollToUpForLoad":
             MessageLookupByLibrary.simpleMessage("إسحب لأعلي تحميل"),
         "shared": m0,
+        "signup": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
         "slidToShow":
             MessageLookupByLibrary.simpleMessage("Slid To Show Videos"),
         "somThingHappened": m1,
@@ -63,7 +79,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "successOperation":
             MessageLookupByLibrary.simpleMessage("Operation done thank you"),
         "supportus": MessageLookupByLibrary.simpleMessage("Support us"),
+        "tazkiyah": MessageLookupByLibrary.simpleMessage("تزكية"),
         "video": MessageLookupByLibrary.simpleMessage("Video"),
-        "writeYourRequest": MessageLookupByLibrary.simpleMessage("أكتب مسألتك!")
+        "writeYourRequest":
+            MessageLookupByLibrary.simpleMessage("أكتب مسألتك!"),
+        "yes": MessageLookupByLibrary.simpleMessage("نعم")
       };
 }

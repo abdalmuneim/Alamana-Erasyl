@@ -319,6 +319,176 @@ class S {
       args: [e],
     );
   }
+
+  /// `تزكية`
+  String get tazkiyah {
+    return Intl.message(
+      'تزكية',
+      name: 'tazkiyah',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الملف الشخصي`
+  String get account {
+    return Intl.message(
+      'الملف الشخصي',
+      name: 'account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الملف الشخصي`
+  String get myProfile {
+    return Intl.message(
+      'الملف الشخصي',
+      name: 'myProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تحتاج تسجيل الدخول أولا`
+  String get needLoginFirst {
+    return Intl.message(
+      'تحتاج تسجيل الدخول أولا',
+      name: 'needLoginFirst',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تسجيل الدخول`
+  String get login {
+    return Intl.message(
+      'تسجيل الدخول',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `انشاء حساب`
+  String get signup {
+    return Intl.message(
+      'انشاء حساب',
+      name: 'signup',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `البريد الالكتروني`
+  String get email {
+    return Intl.message(
+      'البريد الالكتروني',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `رقم الهاتف`
+  String get phone {
+    return Intl.message(
+      'رقم الهاتف',
+      name: 'phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `العنوان`
+  String get address {
+    return Intl.message(
+      'العنوان',
+      name: 'address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `صورة`
+  String get image {
+    return Intl.message(
+      'صورة',
+      name: 'image',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `كلمة السر`
+  String get password {
+    return Intl.message(
+      'كلمة السر',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تاكيد`
+  String get confirm {
+    return Intl.message(
+      'تاكيد',
+      name: 'confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `حفظ`
+  String get save {
+    return Intl.message(
+      'حفظ',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تسجيل الخروج`
+  String get logout {
+    return Intl.message(
+      'تسجيل الخروج',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `نعم`
+  String get yes {
+    return Intl.message(
+      'نعم',
+      name: 'yes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `لا`
+  String get no {
+    return Intl.message(
+      'لا',
+      name: 'no',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `إنشاء مجموعة`
+  String get createGrop {
+    return Intl.message(
+      'إنشاء مجموعة',
+      name: 'createGrop',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
