@@ -12,7 +12,12 @@
           "package_name": "com.mnemdev.alamna"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "355042056705-89e5vgcsu7p0pm2edqr0ce3geek1gcar.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCV9-oi_u_nNdgD4XFp99mHwaEebvAYeVU"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "355042056705-09p20haks2bli55tkasg4gt97r2l4uoa.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "355042056705-vch7mke3089ta5k6svkc1vo4ffljol74.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mnemdev.alamnaelrasyl"
+              }
+            }
+          ]
         }
       }
     }
