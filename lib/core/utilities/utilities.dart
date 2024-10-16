@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:sizer/sizer.dart';
 
 class Utils {
   static void showToast(String text,
@@ -22,7 +23,7 @@ class Utils {
               style: Theme.of(_context)
                   .textTheme
                   .bodySmall!
-                  .copyWith(color: textColor ?? Colors.white, fontSize: 22)),
+                  .copyWith(color: textColor ?? Colors.white, fontSize: 10.sp)),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           backgroundColor: backgroundColor ?? Colors.black.withOpacity(0.7),

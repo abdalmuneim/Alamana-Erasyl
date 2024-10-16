@@ -41,5 +41,9 @@
   "logout": "تسجيل الخروج",
   "yes": "نعم",
   "no": "لا",
-  "createGrop": "إنشاء مجموعة"
+  "createGrop": "إنشاء مجموعة",
+  "tazkiyahAlNafs": "تزكية النفس",
+  "azkar": "أذكار",
+  "SignInwithGoogle": "تسجيل الدخول بواسطة جوجل",
+  "bio": "تعريف"
 }

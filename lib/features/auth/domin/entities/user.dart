@@ -6,13 +6,20 @@ class User extends Equatable {
   final String? phone;
   final String? address;
   final String? image;
-  final int? id;
+  final String? id;
   final String? deviceId;
   final String? fcmToken;
+  final String? bio;
+
+  final DateTime? createAt;
+  final DateTime? updateAt;
 
   const User({
     this.name,
+    this.createAt,
+    this.updateAt,
     this.email,
+    this.bio,
     this.phone,
     this.address,
     this.image,
@@ -28,6 +35,9 @@ class User extends Equatable {
         phone,
         address,
         image,
+        bio,
+        createAt,
+        updateAt,
         id,
         deviceId,
         fcmToken,

@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "SignInwithGoogle":
+            MessageLookupByLibrary.simpleMessage("تسجيل الدخول بواسطة جوجل"),
         "ValidatorRequestWordNum": m2,
         "aboutUs": MessageLookupByLibrary.simpleMessage("About Us"),
         "account": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
@@ -36,6 +38,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Added Successfully and we will replay as soon as!"),
         "address": MessageLookupByLibrary.simpleMessage("العنوان"),
         "alamnaAlrasol": MessageLookupByLibrary.simpleMessage("Alamna Alrasol"),
+        "azkar": MessageLookupByLibrary.simpleMessage("أذكار"),
+        "bio": MessageLookupByLibrary.simpleMessage("تعريف"),
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "confirm": MessageLookupByLibrary.simpleMessage("تاكيد"),
         "createGrop": MessageLookupByLibrary.simpleMessage("إنشاء مجموعة"),
@@ -80,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Operation done thank you"),
         "supportus": MessageLookupByLibrary.simpleMessage("Support us"),
         "tazkiyah": MessageLookupByLibrary.simpleMessage("تزكية"),
+        "tazkiyahAlNafs": MessageLookupByLibrary.simpleMessage("تزكية النفس"),
         "video": MessageLookupByLibrary.simpleMessage("Video"),
         "writeYourRequest":
             MessageLookupByLibrary.simpleMessage("أكتب مسألتك!"),

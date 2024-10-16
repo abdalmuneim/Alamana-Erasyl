@@ -28,7 +28,7 @@ class _PlaylistsViewState extends State<PlaylistsView> {
         PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
           context,
           settings: RouteSettings(
-            name: RouteStrings.videosPlaylist,
+            name: RouteNameStrings.videosPlaylist,
           ),
           screen: VideosPlaylistView(
             id: items.id ?? "",

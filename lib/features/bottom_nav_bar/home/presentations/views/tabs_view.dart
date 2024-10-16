@@ -121,7 +121,7 @@ class _TabsViewState extends State<TabsView> with TickerProviderStateMixin {
               BuildContext context = NavigationService.context;
               PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
                 context,
-                settings: RouteSettings(name: RouteStrings.aboutUs),
+                settings: RouteSettings(name: RouteNameStrings.aboutUs),
                 screen: const AboutUsView(),
                 withNavBar: true,
                 pageTransitionAnimation: PageTransitionAnimation.cupertino,

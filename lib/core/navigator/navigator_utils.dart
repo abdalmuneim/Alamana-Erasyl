@@ -13,7 +13,7 @@ class NavigatorUtils {
   static BuildContext get _context => NavigationService.context;
 
   static void goToVideosPlaylist(String id) => _context.pushNamed(
-        RouteStrings.videosPlaylist,
+        RouteNameStrings.videosPlaylist,
         queryParameters: <String, String>{
           Fields.videos: id,
         },

@@ -489,6 +489,46 @@ class S {
       args: [],
     );
   }
+
+  /// `تزكية النفس`
+  String get tazkiyahAlNafs {
+    return Intl.message(
+      'تزكية النفس',
+      name: 'tazkiyahAlNafs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `أذكار`
+  String get azkar {
+    return Intl.message(
+      'أذكار',
+      name: 'azkar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تسجيل الدخول بواسطة جوجل`
+  String get SignInwithGoogle {
+    return Intl.message(
+      'تسجيل الدخول بواسطة جوجل',
+      name: 'SignInwithGoogle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تعريف`
+  String get bio {
+    return Intl.message(
+      'تعريف',
+      name: 'bio',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

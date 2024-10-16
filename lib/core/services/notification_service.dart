@@ -116,7 +116,7 @@ class NotificationServiceImpl implements NotificationService {
             log("payload: ${details.payload!}");
           } else {
             NavigationService.context
-                .pushReplacementNamed(RouteStrings.splashPage);
+                .pushReplacementNamed(RouteNameStrings.splashPage);
           }
         } catch (e) {
           log("error: ${e.toString()}");

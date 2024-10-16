@@ -1,34 +1,40 @@
 import 'dart:convert';
 
-User userFromMap(String str) => User.fromMap(json.decode(str));
+import 'package:alamanaelrasyl/features/auth/domin/entities/user.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-String userToMap(User data) => json.encode(data.toMap());
+UserModel userFromMap(String str) => UserModel.fromMap(json.decode(str));
 
-class User {
-  final String? name;
-  final String? email;
-  final String? phone;
-  final String? address;
-  final String? image;
-  final String? id;
-  final String? deviceId;
-  final String? fcmToken;
+String userToMap(UserModel data) => json.encode(data.toMap());
 
-  User({
-    this.name,
-    this.email,
-    this.phone,
-    this.address,
-    this.image,
-    this.id,
-    this.deviceId,
-    this.fcmToken,
+class UserModel extends User{
+
+
+  UserModel({
+    super.name,
+    super.email,
+    super.phone,
+    super.address,
+    super.image,
+    super.id,
+    super.deviceId,
+    super.fcmToken,
+    super.createAt,
+    super.updateAt,
+    super.bio,
   });
 
-  factory User.fromMap(Map<String, dynamic> json) => User(
+  factory UserModel.fromMap(Map<String, dynamic> json) => UserModel(
         name: json["name"],
-        email: json["email"],
+        bio: json["bio"],
+        createAt: json['createdAt'] != null
+            ? (json['createdAt'] as Timestamp).toDate()
+            : null,
+        updateAt: json['updatedAt'] != null
+            ? (json['updatedAt'] as Timestamp).toDate()
+            : null,
         phone: json["phone"],
+        email: json["email"],
         address: json["address"],
         image: json["image"],
         id: json["id"],
@@ -61,6 +67,17 @@ class User {
     }
     if (fcmToken != null) {
       data['fcmToken'] = fcmToken;
+    }
+    if (createAt != null) {
+      data['createAt'] = Timestamp.fromDate(createAt!);
+    } else {
+      data['createAt'] = FieldValue.serverTimestamp();
+    }
+    if (updateAt != null) {
+      data['updateAt'] = Timestamp.fromDate(updateAt!);
+    }else{
+      data['updateAt'] = FieldValue.serverTimestamp();
+
     }
     return data;
   }

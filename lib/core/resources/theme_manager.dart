@@ -19,6 +19,16 @@ ThemeData get applicationTheme => ThemeData(
       /// CardViewTheme
       cardTheme: const CardTheme(),
 
+      popupMenuTheme: PopupMenuThemeData(
+        textStyle: GoogleFonts.cairo(fontSize: 10.sp, color: Colors.black),
+        labelTextStyle: WidgetStatePropertyAll(
+          GoogleFonts.cairo(
+            fontSize: 10.sp,
+            color: Colors.black,
+          ),
+        ),
+      ),
+
       /// AppBar Theme
       appBarTheme: AppBarTheme(
           systemOverlayStyle: const SystemUiOverlayStyle(
@@ -34,8 +44,7 @@ ThemeData get applicationTheme => ThemeData(
       /// Text Button Theme
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
-          textStyle:
-              WidgetStateProperty.resolveWith((Set<WidgetState > states) {
+          textStyle: WidgetStateProperty.resolveWith((Set<WidgetState> states) {
             return GoogleFonts.cairo(
               fontSize: 10.sp, // Set your desired font size
               fontWeight: FontWeight.normal, // Set your desired font weight
