@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>355042056705-vch7mke3089ta5k6svkc1vo4ffljol74.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.355042056705-vch7mke3089ta5k6svkc1vo4ffljol74</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>355042056705-mq479ktv6m6a665h0qf72pn60r7ub8dr.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBfeVjlU_jrIscCQZ8IucJsGrVs73KcLEc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>355042056705</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mnemdev.alamnaelrasyl</string>
+	<key>PROJECT_ID</key>
+	<string>alamna-el-rasyl</string>
+	<key>STORAGE_BUCKET</key>
+	<string>alamna-el-rasyl.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:355042056705:ios:3f5032c849b7098f69fe00</string>
+</dict>
+</plist>
